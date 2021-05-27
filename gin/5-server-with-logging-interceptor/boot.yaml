@@ -1,0 +1,15 @@
+---
+gin:
+  - name: greeter                     # Required
+    port: 8080                        # Required
+    description: "greeter server"
+    sw:
+      enabled: true
+      jsonPath: "docs"
+    prom:
+      enabled: true
+    commonService:
+      enabled: true
+    interceptors:
+      loggingZap:
+        enabled: true
