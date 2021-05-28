@@ -8,6 +8,7 @@ import (
 	"context"
 	"errors"
 	"github.com/gin-gonic/gin"
+	"github.com/gin-gonic/gin/binding"
 	"github.com/google/uuid"
 	"github.com/rookie-ninja/rk-boot"
 	"net/http"
@@ -29,7 +30,7 @@ func main() {
 	boot := rkboot.NewBoot()
 
 	// Register handler
-	boot.GetGinEntry("greeter").Router.GET("/v1/hello", hello)
+	boot.GetGinEntry("greeter").Router.POST("/v1/hello", hello)
 
 	// Bootstrap
 	boot.Bootstrap(context.TODO())
@@ -47,23 +48,28 @@ func main() {
 // @Accept  application/json
 // @Tags Hello
 // @version 1.0
-// @Param name query string true "Your name"
+// @Param name body helloRequest true "Your name"
 // @Produce application/json
 // @Success 200 {object} helloResponse
 // @Failure 400 {object} httpError
-// @Router /v1/hello [get]
+// @Router /v1/hello [post]
 // @Header all {string} request-id "Request id for with uuid generator."
 func hello(ctx *gin.Context) {
 	ctx.Header("request-id", uuid.New().String())
 
-	if name := ctx.Query("name"); len(name) < 1 {
-		NewError(ctx, http.StatusBadRequest, errors.New("name should not be nil"))
-		return
-	}
+	request := helloRequest{}
 
-	ctx.JSON(http.StatusOK, &helloResponse{
-		Response: "hello " + ctx.Query("name"),
-	})
+	if err := ctx.ShouldBindBodyWith(&request, binding.JSON); err == nil {
+		ctx.JSON(http.StatusOK, &helloResponse{
+			Response: "hello " + request.Name,
+		})
+	} else {
+		NewError(ctx, http.StatusBadRequest, errors.New(err.Error()))
+	}
+}
+
+type helloRequest struct {
+	Name string `json:"name" yaml:"name" example:"user"`
 }
 
 type helloResponse struct {

@@ -34,7 +34,7 @@ var doc = `{
     "basePath": "{{.BasePath}}",
     "paths": {
         "/v1/hello": {
-            "get": {
+            "post": {
                 "description": "Say hello to incoming name.",
                 "consumes": [
                     "application/json"
@@ -49,11 +49,13 @@ var doc = `{
                 "operationId": "v1.api.hello",
                 "parameters": [
                     {
-                        "type": "string",
                         "description": "Your name",
                         "name": "name",
-                        "in": "query",
-                        "required": true
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/main.helloRequest"
+                        }
                     }
                 ],
                 "responses": {
@@ -86,6 +88,15 @@ var doc = `{
         }
     },
     "definitions": {
+        "main.helloRequest": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "example": "rk-dev"
+                }
+            }
+        },
         "main.helloResponse": {
             "type": "object",
             "properties": {

@@ -1,4 +1,10 @@
 definitions:
+  main.helloRequest:
+    properties:
+      name:
+        example: rk-dev
+        type: string
+    type: object
   main.helloResponse:
     properties:
       response:
@@ -28,17 +34,18 @@ info:
   version: "1.0"
 paths:
   /v1/hello:
-    get:
+    post:
       consumes:
       - application/json
       description: Say hello to incoming name.
       operationId: v1.api.hello
       parameters:
       - description: Your name
-        in: query
+        in: body
         name: name
         required: true
-        type: string
+        schema:
+          $ref: '#/definitions/main.helloRequest'
       produces:
       - application/json
       responses:

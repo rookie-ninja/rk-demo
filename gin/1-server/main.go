@@ -8,6 +8,7 @@ import (
 	"context"
 	"errors"
 	"github.com/gin-gonic/gin"
+	"github.com/gin-gonic/gin/binding"
 	"github.com/google/uuid"
 	"github.com/rookie-ninja/rk-boot"
 	"net/http"
@@ -34,14 +35,19 @@ func main() {
 func hello(ctx *gin.Context) {
 	ctx.Header("request-id", uuid.New().String())
 
-	if name := ctx.Query("name"); len(name) < 1 {
-		NewError(ctx, http.StatusBadRequest, errors.New("name should not be nil"))
-		return
-	}
+	request := helloRequest{}
 
-	ctx.JSON(http.StatusOK, &helloResponse{
-		Response: "hello " + ctx.Query("name"),
-	})
+	if err := ctx.ShouldBindBodyWith(&request, binding.JSON); err == nil {
+		ctx.JSON(http.StatusOK, &helloResponse{
+			Response: "hello " + request.Name,
+		})
+	} else {
+		NewError(ctx, http.StatusBadRequest, errors.New(err.Error()))
+	}
+}
+
+type helloRequest struct {
+	Name string `json:"name" yaml:"name" example:"rk-dev"`
 }
 
 type helloResponse struct {

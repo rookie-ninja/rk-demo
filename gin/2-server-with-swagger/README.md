@@ -103,12 +103,13 @@ Please refer [swag](https://github.com/swaggo/swag) for details.
 package main
 
 import (
-	"context"
-	"errors"
-	"github.com/gin-gonic/gin"
-	"github.com/google/uuid"
-	"github.com/rookie-ninja/rk-boot"
-	"net/http"
+  "context"
+  "errors"
+  "github.com/gin-gonic/gin"
+  "github.com/gin-gonic/gin/binding"
+  "github.com/google/uuid"
+  "github.com/rookie-ninja/rk-boot"
+  "net/http"
 )
 
 // @title Swagger Example API
@@ -122,14 +123,20 @@ import (
 // @license.url http://www.apache.org/licenses/LICENSE-2.0.html
 // @schemes http https
 func main() {
-	// Create a new boot instance.
-	boot := rkboot.NewBoot()
+  // Create a new boot instance.
+  boot := rkboot.NewBoot()
 
-	// Register handler
-	boot.GetGinEntry("greeter").Router.GET("/v1/hello", hello)
+  // Register handler
+  boot.GetGinEntry("greeter").Router.POST("/v1/hello", hello)
 
-	// Bootstrap
-	boot.Bootstrap(context.TODO())
+  // Bootstrap
+  boot.Bootstrap(context.TODO())
+
+  // Wait for shutdown signal
+  boot.WaitForShutdownSig()
+
+  // Interrupt entries
+  boot.Interrupt(context.TODO())
 }
 
 // @Summary Hello
@@ -138,38 +145,31 @@ func main() {
 // @Accept  application/json
 // @Tags Hello
 // @version 1.0
-// @Param name query string true "Your name"
+// @Param name body helloRequest true "Your name"
 // @Produce application/json
 // @Success 200 {object} helloResponse
 // @Failure 400 {object} httpError
-// @Router /v1/hello [get]
+// @Router /v1/hello [post]
 // @Header all {string} request-id "Request id for with uuid generator."
 func hello(ctx *gin.Context) {
-	ctx.Header("request-id", uuid.New().String())
+  ctx.Header("request-id", uuid.New().String())
 
-	if name := ctx.Query("name"); len(name) > 1 {
-		NewError(ctx, http.StatusBadRequest, errors.New("name should not be nil"))
-		return
-	}
+  request := helloRequest{}
 
-	ctx.JSON(http.StatusOK, &helloResponse{
-		Response: "hello " + ctx.Query("name"),
-	})
+  if err := ctx.ShouldBindBodyWith(&request, binding.JSON); err == nil {
+    ctx.JSON(http.StatusOK, &helloResponse{
+      Response: "hello " + request.Name,
+    })
+  } else {
+    NewError(ctx, http.StatusBadRequest, errors.New(err.Error()))
+  }
+}
+
+type helloRequest struct {
+  Name string `json:"name" yaml:"name" example:"user"`
 }
 
 type helloResponse struct {
-	Response string `json:"response" yaml:"response" example:"hello user"`
-}
-
-func NewError(ctx *gin.Context, status int, err error) {
-	ctx.JSON(status, httpError{
-		Code:    status,
-		Message: err.Error(),
-	})
-}
-
-type httpError struct {
-	Code    int    `json:"code" yaml:"code" example:"400"`
-	Message string `json:"message" yaml:"message" example:"status bad request"`
+  Response string `json:"response" yaml:"response" example:"hello user"`
 }
 ```
