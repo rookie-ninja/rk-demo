@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,126 +23,229 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef048986-5a36-4acc-82c3-b9398a775237" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/rk-demo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/1-server/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/1-server/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/1-server/boot.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/10-server-with-zap-logger/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/10-server-with-zap-logger/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/10-server-with-zap-logger/boot.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/10-server-with-zap-logger/docs/docs.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/10-server-with-zap-logger/docs/swagger.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/10-server-with-zap-logger/docs/swagger.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/10-server-with-zap-logger/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/10-server-with-zap-logger/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/11-server-with-event-logger/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/11-server-with-event-logger/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/11-server-with-event-logger/boot.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/11-server-with-event-logger/docs/docs.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/11-server-with-event-logger/docs/swagger.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/11-server-with-event-logger/docs/swagger.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/11-server-with-event-logger/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/11-server-with-event-logger/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/12-server-with-viper-config/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/12-server-with-viper-config/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/12-server-with-viper-config/boot.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/12-server-with-viper-config/configs/my-config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/12-server-with-viper-config/docs/docs.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/12-server-with-viper-config/docs/swagger.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/12-server-with-viper-config/docs/swagger.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/12-server-with-viper-config/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/12-server-with-viper-config/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/13-server-with-tls/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/13-server-with-tls/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/13-server-with-tls/boot.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/13-server-with-tls/certs/server-key.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/13-server-with-tls/certs/server.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/13-server-with-tls/configs/my-config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/13-server-with-tls/docs/docs.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/13-server-with-tls/docs/swagger.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/13-server-with-tls/docs/swagger.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/13-server-with-tls/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/13-server-with-tls/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/boot.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/certs/server-key.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/certs/server.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/configs/my-config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/docs/docs.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/docs/swagger.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/docs/swagger.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/2-server-with-swagger/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/2-server-with-swagger/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/2-server-with-swagger/boot.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/2-server-with-swagger/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/2-server-with-swagger/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/3-server-with-common-service/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/3-server-with-common-service/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/3-server-with-common-service/boot.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/3-server-with-common-service/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/3-server-with-common-service/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/4-server-with-prometheus/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/4-server-with-prometheus/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/4-server-with-prometheus/boot.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/4-server-with-prometheus/docs/docs.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/4-server-with-prometheus/docs/swagger.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/4-server-with-prometheus/docs/swagger.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/4-server-with-prometheus/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/4-server-with-prometheus/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/5-server-with-logging-interceptor/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/5-server-with-logging-interceptor/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/5-server-with-logging-interceptor/boot.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/5-server-with-logging-interceptor/docs/docs.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/5-server-with-logging-interceptor/docs/swagger.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/5-server-with-logging-interceptor/docs/swagger.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/5-server-with-logging-interceptor/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/5-server-with-logging-interceptor/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/6-server-with-metrics-interceptor/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/6-server-with-metrics-interceptor/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/6-server-with-metrics-interceptor/boot.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/6-server-with-metrics-interceptor/docs/docs.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/6-server-with-metrics-interceptor/docs/swagger.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/6-server-with-metrics-interceptor/docs/swagger.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/6-server-with-metrics-interceptor/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/6-server-with-metrics-interceptor/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/7-server-with-basic-auth-interceptor/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/7-server-with-basic-auth-interceptor/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/7-server-with-basic-auth-interceptor/boot.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/7-server-with-basic-auth-interceptor/docs/docs.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/7-server-with-basic-auth-interceptor/docs/swagger.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/7-server-with-basic-auth-interceptor/docs/swagger.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/7-server-with-basic-auth-interceptor/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/7-server-with-basic-auth-interceptor/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/8-server-with-tv/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/8-server-with-tv/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/8-server-with-tv/boot.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/8-server-with-tv/docs/docs.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/8-server-with-tv/docs/swagger.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/8-server-with-tv/docs/swagger.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/8-server-with-tv/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/8-server-with-tv/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/9-server-with-app-info/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/9-server-with-app-info/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/9-server-with-app-info/boot.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/9-server-with-app-info/docs/docs.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/9-server-with-app-info/docs/swagger.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/9-server-with-app-info/docs/swagger.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/9-server-with-app-info/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gin/9-server-with-app-info/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/gin-server-with-appinfo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/gin-server-with-common-service.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/gin-server-with-logging-interceptor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/gin-server-with-metrics-interceptor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/gin-server-with-prometheus-my-metrics.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/gin-server-with-prometheus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/gin-server-with-swagger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/gin-server-with-tls.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/gin-server-with-tv.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/protoeditor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/build.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/config/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/gen/mod/dep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/entry-level/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/entry-level/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/entry-level/boot.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/entry-level/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/entry-level/img/enable-jaeger-inter.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/entry-level/img/enable-prom-client.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/entry-level/img/enable-prom-inter.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/entry-level/img/enable-swagger.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/entry-level/img/enable-tv.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/entry-level/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/junior-level/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/junior-level/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/junior-level/boot.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/junior-level/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/junior-level/img/enable-jaeger-inter.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/junior-level/img/enable-prom-client.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/junior-level/img/enable-prom-inter.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/junior-level/img/enable-swagger.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/junior-level/img/enable-tv.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/junior-level/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/standard/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/standard/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/standard/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/standard/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/standard/build.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/standard/internal/api/v1/greeter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gin/standard/internal/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/api/gen/v1/hello.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/api/gen/v1/hello.pb.gw.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/api/gen/v1/hello.swagger.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/api/gen/v1/hello_grpc.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/api/v1/gw_mapping.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/api/v1/hello.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/boot.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/buf.gen.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/buf.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/third-party/googleapis/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/third-party/googleapis/README.grpc-gateway" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/third-party/googleapis/google/api/annotations.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/third-party/googleapis/google/api/http.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/third-party/googleapis/google/api/httpbody.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/third-party/googleapis/google/rpc/code.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/third-party/googleapis/google/rpc/error_details.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/third-party/googleapis/google/rpc/status.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/third-party/protoc-gen-openapiv2/options/annotations.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/third-party/protoc-gen-openapiv2/options/openapiv2.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/third-party/rk/sw.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/2-server-with-gateway/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/2-server-with-gateway/api/gen/v1/hello.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/2-server-with-gateway/api/gen/v1/hello.pb.gw.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/2-server-with-gateway/api/gen/v1/hello.swagger.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/2-server-with-gateway/api/gen/v1/hello_grpc.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/2-server-with-gateway/api/v1/gw_mapping.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/2-server-with-gateway/api/v1/hello.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/2-server-with-gateway/boot.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/2-server-with-gateway/buf.gen.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/2-server-with-gateway/buf.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/2-server-with-gateway/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/2-server-with-gateway/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/api/gen/v1/hello.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/api/gen/v1/hello.pb.gw.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/api/gen/v1/hello.swagger.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/api/gen/v1/hello_grpc.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/api/v1/gw_mapping.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/api/v1/hello.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/boot.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/buf.gen.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/buf.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/third-party/googleapis/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/third-party/googleapis/README.grpc-gateway" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/third-party/googleapis/google/api/annotations.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/third-party/googleapis/google/api/http.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/third-party/googleapis/google/api/httpbody.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/third-party/googleapis/google/rpc/code.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/third-party/googleapis/google/rpc/error_details.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/third-party/googleapis/google/rpc/status.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/third-party/protoc-gen-openapiv2/options/annotations.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/third-party/protoc-gen-openapiv2/options/openapiv2.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/1-server/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/1-server/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/1-server/boot.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/gin/standard/boot.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/1-server/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/1-server/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/1-server/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/10-server-with-zap-logger/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/2-server-with-gateway/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/10-server-with-zap-logger/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/10-server-with-zap-logger/boot.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/10-server-with-zap-logger/docs/docs.go" beforeDir="false" afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/gen/sw/docs.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/10-server-with-zap-logger/docs/swagger.json" beforeDir="false" afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/gen/sw/swagger.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/10-server-with-zap-logger/docs/swagger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/gen/sw/swagger.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/10-server-with-zap-logger/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/10-server-with-zap-logger/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/gin/entry-level/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/10-server-with-zap-logger/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/11-server-with-event-logger/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/3-server-with-gateway-swagger/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/11-server-with-event-logger/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/11-server-with-event-logger/boot.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/11-server-with-event-logger/docs/docs.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/11-server-with-event-logger/docs/swagger.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/11-server-with-event-logger/docs/swagger.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/11-server-with-event-logger/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/11-server-with-event-logger/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/11-server-with-event-logger/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/12-server-with-viper-config/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/12-server-with-viper-config/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/12-server-with-viper-config/boot.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/12-server-with-viper-config/configs/my-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/config/my-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/12-server-with-viper-config/docs/docs.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/12-server-with-viper-config/docs/swagger.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/12-server-with-viper-config/docs/swagger.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/12-server-with-viper-config/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/12-server-with-viper-config/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/1-server-with-reflection/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/12-server-with-viper-config/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/13-server-with-tls/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/13-server-with-tls/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/13-server-with-tls/boot.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/13-server-with-tls/certs/server-key.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/13-server-with-tls/certs/server.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/13-server-with-tls/configs/my-config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/13-server-with-tls/docs/docs.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/13-server-with-tls/docs/swagger.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/13-server-with-tls/docs/swagger.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/13-server-with-tls/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/13-server-with-tls/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/grpc/2-server-with-gateway/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/13-server-with-tls/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/14-server-with-custom-entry/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/14-server-with-custom-entry/boot.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/boot.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/14-server-with-custom-entry/configs/my-config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/14-server-with-custom-entry/docs/docs.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/14-server-with-custom-entry/docs/swagger.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/14-server-with-custom-entry/docs/swagger.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/14-server-with-custom-entry/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/14-server-with-custom-entry/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/14-server-with-custom-entry/logs/greeter-event.log" beforeDir="false" afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/logs/greeter-event.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/14-server-with-custom-entry/logs/greeter.log" beforeDir="false" afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/logs/greeter.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/14-server-with-custom-entry/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/gin/14-server-with-custom-entry/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/2-server-with-swagger/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/2-server-with-swagger/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/2-server-with-swagger/boot.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/2-server-with-swagger/docs/docs.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/2-server-with-swagger/docs/swagger.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/2-server-with-swagger/docs/swagger.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/2-server-with-swagger/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/2-server-with-swagger/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/2-server-with-swagger/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/3-server-with-common-service/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/3-server-with-common-service/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/3-server-with-common-service/boot.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/3-server-with-common-service/docs/docs.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/3-server-with-common-service/docs/swagger.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/3-server-with-common-service/docs/swagger.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/3-server-with-common-service/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/3-server-with-common-service/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/3-server-with-common-service/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/4-server-with-prometheus/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/4-server-with-prometheus/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/4-server-with-prometheus/boot.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/4-server-with-prometheus/docs/docs.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/4-server-with-prometheus/docs/swagger.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/4-server-with-prometheus/docs/swagger.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/4-server-with-prometheus/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/4-server-with-prometheus/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/4-server-with-prometheus/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/5-server-with-logging-interceptor/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/5-server-with-logging-interceptor/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/5-server-with-logging-interceptor/boot.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/5-server-with-logging-interceptor/docs/docs.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/5-server-with-logging-interceptor/docs/swagger.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/5-server-with-logging-interceptor/docs/swagger.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/5-server-with-logging-interceptor/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/5-server-with-logging-interceptor/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/5-server-with-logging-interceptor/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/6-server-with-metrics-interceptor/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/6-server-with-metrics-interceptor/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/6-server-with-metrics-interceptor/boot.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/6-server-with-metrics-interceptor/docs/docs.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/6-server-with-metrics-interceptor/docs/swagger.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/6-server-with-metrics-interceptor/docs/swagger.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/6-server-with-metrics-interceptor/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/6-server-with-metrics-interceptor/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/6-server-with-metrics-interceptor/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/7-server-with-basic-auth-interceptor/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/7-server-with-basic-auth-interceptor/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/7-server-with-basic-auth-interceptor/boot.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/7-server-with-basic-auth-interceptor/docs/docs.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/7-server-with-basic-auth-interceptor/docs/swagger.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/7-server-with-basic-auth-interceptor/docs/swagger.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/7-server-with-basic-auth-interceptor/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/7-server-with-basic-auth-interceptor/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/7-server-with-basic-auth-interceptor/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/8-server-with-tv/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/8-server-with-tv/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/8-server-with-tv/boot.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/8-server-with-tv/docs/docs.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/8-server-with-tv/docs/swagger.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/8-server-with-tv/docs/swagger.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/8-server-with-tv/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/8-server-with-tv/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/8-server-with-tv/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/9-server-with-app-info/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/9-server-with-app-info/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/9-server-with-app-info/boot.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/9-server-with-app-info/docs/docs.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/9-server-with-app-info/docs/swagger.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/9-server-with-app-info/docs/swagger.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/9-server-with-app-info/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/9-server-with-app-info/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gin/9-server-with-app-info/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/gin-server-with-logging-interceptor.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/gin-server-with-logging-interceptor.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/gin-server-with-metrics-interceptor.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/gin-server-with-metrics-interceptor.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/gin-server-with-swagger.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/gin-server-with-swagger.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,73 +272,77 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/gin/14-server-with-custom-entry" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/gin/junior-level" />
+    <property name="settings.editor.selected.configurable" value="google.protobuf.language" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/img" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/gin/14-server-with-custom-entry" />
-      <recent name="$PROJECT_DIR$/gin/13-server-with-tls/certs" />
-      <recent name="$PROJECT_DIR$/gin/13-server-with-tls" />
-      <recent name="$PROJECT_DIR$/gin/12-server-with-viper-config" />
-      <recent name="$PROJECT_DIR$/gin/11-server-with-event-logger" />
+      <recent name="$PROJECT_DIR$/gin/junior-level" />
+      <recent name="$PROJECT_DIR$/gin/boot-config" />
+      <recent name="$PROJECT_DIR$/gin/7-server-with-auth-interceptor" />
+      <recent name="$PROJECT_DIR$/gin/6-server-with-metrics-interceptor" />
+      <recent name="$PROJECT_DIR$/gin/5-server-with-logging-interceptor" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/gin/boot-config/img" />
+      <recent name="$PROJECT_DIR$/gin/boot-config" />
+      <recent name="$PROJECT_DIR$/img" />
+      <recent name="$PROJECT_DIR$/gin/standard/target/.rk/ut" />
+      <recent name="$PROJECT_DIR$/gin/standard/target/.rk/dep" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go (4)">
-    <configuration name="go build main.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="rk-demo" />
-      <working_directory value="$PROJECT_DIR$/gin/9-server-with-app-info" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/gin/9-server-with-app-info/main.go" />
-      <directory value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Build.go build main.go">
     <configuration name="go build main.go (2)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="rk-demo" />
-      <working_directory value="$PROJECT_DIR$/gin/10-server-with-zap-logger" />
+      <working_directory value="$PROJECT_DIR$/gin/3-server-with-common-service" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/gin/10-server-with-zap-logger/main.go" />
+      <filePath value="$PROJECT_DIR$/gin/3-server-with-common-service/internal/main.go" />
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
     <configuration name="go build main.go (3)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="rk-demo" />
-      <working_directory value="$PROJECT_DIR$/gin/11-server-with-event-logger" />
+      <working_directory value="$PROJECT_DIR$/gin/4-server-with-prometheus" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/gin/11-server-with-event-logger/main.go" />
+      <filePath value="$PROJECT_DIR$/gin/4-server-with-prometheus/internal/main.go" />
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
     <configuration name="go build main.go (4)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="rk-demo" />
-      <working_directory value="$PROJECT_DIR$/gin/14-server-with-custom-entry" />
+      <working_directory value="$PROJECT_DIR$/gin/5-server-with-logging-interceptor" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/gin/14-server-with-custom-entry/main.go" />
+      <filePath value="$PROJECT_DIR$/gin/5-server-with-logging-interceptor/internal/main.go" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build main.go (5)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="rk-demo" />
+      <working_directory value="$PROJECT_DIR$/gin/6-server-with-metrics-interceptor" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/gin/6-server-with-metrics-interceptor/internal/main.go" />
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="rk-demo" />
-      <working_directory value="$PROJECT_DIR$/gin/13-server-with-tls" />
+      <working_directory value="$PROJECT_DIR$/gin/boot-config" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/gin/13-server-with-tls/main.go" />
+      <filePath value="$PROJECT_DIR$/gin/boot-config/main.go" />
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build main.go (4)" />
         <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build main.go (5)" />
+        <item itemvalue="Go Build.go build main.go (4)" />
         <item itemvalue="Go Build.go build main.go (3)" />
         <item itemvalue="Go Build.go build main.go (2)" />
-        <item itemvalue="Go Build.go build main.go (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -250,6 +360,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -263,26 +374,38 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="973" y="539" key="#Log_Highlighting_(ideolog)/0.23.2560.1417/-2560.23.2560.1417@0.23.2560.1417" timestamp="1622097205312" />
+    <state x="1009" y="540" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1625079160330">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="1009" y="540" key="#com.intellij.fileTypes.FileTypeChooser/-2560.23.2560.1417/0.23.2560.1417@0.23.2560.1417" timestamp="1625079160330" />
     <state x="1187" y="600" key="EnvironmentVariablesDialog" timestamp="1622015111080">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="1187" y="600" key="EnvironmentVariablesDialog/0.23.2560.1417/-2560.23.2560.1417@0.23.2560.1417" timestamp="1622015111080" />
-    <state width="2518" height="490" key="GridCell.Tab.0.bottom" timestamp="1622122548694">
+    <state width="2518" height="567" key="GridCell.Tab.0.bottom" timestamp="1625146545843">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="2518" height="490" key="GridCell.Tab.0.bottom/0.23.2560.1417/-2560.23.2560.1417@0.23.2560.1417" timestamp="1622122548694" />
-    <state width="2518" height="490" key="GridCell.Tab.0.center" timestamp="1622122548694">
+    <state width="2518" height="567" key="GridCell.Tab.0.bottom/-2560.23.2560.1417/0.23.2560.1417@0.23.2560.1417" timestamp="1625146545843" />
+    <state width="1398" height="366" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1622460322633" />
+    <state width="2518" height="635" key="GridCell.Tab.0.bottom/0.23.2560.1417/-2560.23.2560.1417@0.23.2560.1417" timestamp="1622568871670" />
+    <state width="2518" height="567" key="GridCell.Tab.0.center" timestamp="1625146545842">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="2518" height="490" key="GridCell.Tab.0.center/0.23.2560.1417/-2560.23.2560.1417@0.23.2560.1417" timestamp="1622122548694" />
-    <state width="2518" height="490" key="GridCell.Tab.0.left" timestamp="1622122548693">
+    <state width="2518" height="567" key="GridCell.Tab.0.center/-2560.23.2560.1417/0.23.2560.1417@0.23.2560.1417" timestamp="1625146545842" />
+    <state width="1398" height="366" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1622460322632" />
+    <state width="2518" height="635" key="GridCell.Tab.0.center/0.23.2560.1417/-2560.23.2560.1417@0.23.2560.1417" timestamp="1622568871667" />
+    <state width="2518" height="567" key="GridCell.Tab.0.left" timestamp="1625146545840">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="2518" height="490" key="GridCell.Tab.0.left/0.23.2560.1417/-2560.23.2560.1417@0.23.2560.1417" timestamp="1622122548693" />
-    <state width="2518" height="490" key="GridCell.Tab.0.right" timestamp="1622122548694">
+    <state width="2518" height="567" key="GridCell.Tab.0.left/-2560.23.2560.1417/0.23.2560.1417@0.23.2560.1417" timestamp="1625146545840" />
+    <state width="1398" height="366" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1622460322632" />
+    <state width="2518" height="635" key="GridCell.Tab.0.left/0.23.2560.1417/-2560.23.2560.1417@0.23.2560.1417" timestamp="1622568871666" />
+    <state width="2518" height="567" key="GridCell.Tab.0.right" timestamp="1625146545843">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="2518" height="490" key="GridCell.Tab.0.right/0.23.2560.1417/-2560.23.2560.1417@0.23.2560.1417" timestamp="1622122548694" />
+    <state width="2518" height="567" key="GridCell.Tab.0.right/-2560.23.2560.1417/0.23.2560.1417@0.23.2560.1417" timestamp="1625146545843" />
+    <state width="1398" height="366" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1622460322632" />
+    <state width="2518" height="635" key="GridCell.Tab.0.right/0.23.2560.1417/-2560.23.2560.1417@0.23.2560.1417" timestamp="1622568871668" />
     <state width="2518" height="502" key="GridCell.Tab.1.bottom" timestamp="1622111036366">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
@@ -299,9 +422,14 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state width="2518" height="502" key="GridCell.Tab.1.right/0.23.2560.1417/-2560.23.2560.1417@0.23.2560.1417" timestamp="1622111036366" />
-    <state x="945" y="348" width="670" height="676" key="search.everywhere.popup" timestamp="1622121382137">
+    <state x="789" y="370" key="SettingsEditor" timestamp="1622227024256">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
+    <state x="789" y="370" key="SettingsEditor/0.23.2560.1417/-2560.23.2560.1417@0.23.2560.1417" timestamp="1622227024256" />
+    <state x="945" y="348" width="670" height="676" key="search.everywhere.popup" timestamp="1624903648976">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="945" y="348" width="670" height="676" key="search.everywhere.popup/-2560.23.2560.1417/0.23.2560.1417@0.23.2560.1417" timestamp="1624903648976" />
     <state x="945" y="348" width="670" height="676" key="search.everywhere.popup/0.23.2560.1417/-2560.23.2560.1417@0.23.2560.1417" timestamp="1622121382137" />
   </component>
 </project>

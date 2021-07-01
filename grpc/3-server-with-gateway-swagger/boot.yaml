@@ -1,0 +1,13 @@
+---
+grpc:
+  - name: greeter              # Required
+    port: 1949                 # Required
+    descirption: "demo grpc"   # Optional, default: ""
+    reflection:                # Optional, default: false
+      enabled: true
+    gw:                        # Optional
+      enabled: true            # Required
+      port: 8080               # Required
+      sw:                      # Optional
+        enabled: true          # Required
+        jsonPath: "api/gen/v1" # Required
