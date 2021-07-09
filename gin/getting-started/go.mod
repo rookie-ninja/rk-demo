@@ -1,4 +1,4 @@
-module github.com/rookie-ninja/rk-demo
+module github.com/rk/gin-demo
 
 go 1.16
 

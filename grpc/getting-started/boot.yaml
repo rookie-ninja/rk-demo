@@ -1,0 +1,17 @@
+---
+grpc:
+  - name: greeter                   # Name of grpc entry
+    port: 1949                      # Port of grpc entry
+    reflection: true                # Enable grpc server reflection, https://github.com/grpc/grpc/blob/master/doc/server-reflection.md
+    commonService:
+      enabled: true                 # Enable common service
+    gw:
+      enabled: true                 # Enable grpc-gateway, https://github.com/grpc-ecosystem/grpc-gateway
+      port: 8080                    # Port of grpc-gateway
+      gwMappingFilePaths:
+        - "api/v1/gw_mapping.yaml"  # Boot will look for gateway mapping files and load information into memory
+      tv:
+        enabled: true               # Enable RK TV
+      sw:
+        enabled: true               # Enable Swagger UI
+        jsonPath: "api/gen/v1"      # Boot will look for swagger config files from this folder

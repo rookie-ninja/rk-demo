@@ -1,0 +1,41 @@
+---
+grpc:
+  - name: greeter                   # Name of grpc entry
+    port: 1949                      # Port of grpc entry
+    reflection: true
+    commonService:
+      enabled: true                 # Enable common service for testing
+    gw:
+      enabled: true                 # Enable grpc-gateway, https://github.com/grpc-ecosystem/grpc-gateway
+      port: 8080                    # Port of grpc-gateway
+#      prom:
+#        enabled: true               # Enable prometheus client
+#      tv:
+#        enabled: true
+#      rkServerOption: true          # Enable RK style server options
+#      gwMappingFilePaths:
+#        - "api/v1/gw_mapping.yaml"  # Boot will look for gateway mapping files and load information into memory
+#      sw:
+#        enabled: true
+#        jsonPath: "api/gen/v1"
+#    interceptors:
+#      auth:
+#        enabled: true                # Enable auth interceptor/middleware
+#        basic: ["user:pass"]         # Enable basic auth
+#        ignorePrefix: ["/rk.api.v1.RkCommonService/Healthy"]
+#        apiKey: ["token"]
+#      tracingTelemetry:
+#        enabled: true
+#        exporter:
+#          jaeger:
+#            enabled: true
+#          file:
+#            enabled: true
+#            outputPath: "stdout"
+#      metricsProm:
+#        enabled: true
+#      loggingZap:
+#        enabled: true
+#      meta:
+#        enabled: true
+#        prefix: Override

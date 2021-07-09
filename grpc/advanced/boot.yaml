@@ -1,0 +1,64 @@
+---
+#app:
+#  description: "this is description"  # Optional, default: ""
+#  keywords: ["rk", "golang"]          # Optional, default: []
+#  homeUrl: "http://example.com"       # Optional, default: ""
+#  iconUrl: "http://example.com"       # Optional, default: ""
+#  docsUrl: ["http://example.com"]     # Optional, default: []
+#  maintainers: ["rk-dev"]             # Optional, default: []
+#eventLogger:
+#  - name: event-logger
+#cert:
+#  - name: "local-cert"                     # Required
+#    description: "Description of entry"    # Optional
+#    provider: "localFs"                    # Required, etcd, consul, localFs, remoteFs are supported options
+#    locale: "*::*::*::*"                   # Optional, default: *::*::*::*
+#    serverCertPath: "cert/server.pem"      # Optional, default: "", path of certificate on local FS
+#    serverKeyPath: "cert/server-key.pem"   # Optional, default: "", path of certificate on local FS
+grpc:
+  - name: greeter                   # Name of grpc entry
+    port: 1949                      # Port of grpc entry
+#    cert:
+#      ref: "local-cert"
+#    reflection: true
+#    logger:
+#      eventLogger:
+#        ref: event-logger
+#    commonService:
+#      enabled: true                 # Enable common service for testing
+#    gw:
+#      enabled: true                 # Enable grpc-gateway, https://github.com/grpc-ecosystem/grpc-gateway
+#      port: 8080                    # Port of grpc-gateway
+#      cert:
+#        ref: "local-cert"
+#      prom:
+#        enabled: true               # Enable prometheus client
+#      tv:
+#        enabled: true
+#      rkServerOption: true          # Enable RK style server options
+#      gwMappingFilePaths:
+#        - "api/v1/gw_mapping.yaml"  # Boot will look for gateway mapping files and load information into memory
+#      sw:
+#        enabled: true
+#        jsonPath: "api/gen/v1"
+#    interceptors:
+#      auth:
+#        enabled: true                # Enable auth interceptor/middleware
+#        basic: ["user:pass"]         # Enable basic auth
+#        ignorePrefix: ["/rk.api.v1.RkCommonService/Healthy"]
+#        apiKey: ["token"]
+#      tracingTelemetry:
+#        enabled: true
+#        exporter:
+#          jaeger:
+#            enabled: true
+#          file:
+#            enabled: true
+#            outputPath: "stdout"
+#      metricsProm:
+#        enabled: true
+#      loggingZap:
+#        enabled: true
+#      meta:
+#        enabled: true
+#        prefix: Override

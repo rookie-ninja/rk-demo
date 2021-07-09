@@ -1,0 +1,144 @@
+---
+app:
+  description: "this is description"  # Optional, default: ""
+  keywords: ["rk", "golang"]          # Optional, default: []
+  homeUrl: "http://example.com"       # Optional, default: ""
+  iconUrl: "http://example.com"       # Optional, default: ""
+  docsUrl: ["http://example.com"]     # Optional, default: []
+  maintainers: ["rk-dev"]             # Optional, default: []
+#zapLogger:
+#  - name: zap-logger                      # Required
+#    description: "Description of entry"   # Optional
+#    zap:
+#      level: info                         # Optional, default: info, options: [debug, DEBUG, info, INFO, warn, WARN, dpanic, DPANIC, panic, PANIC, fatal, FATAL]
+#      development: true                   # Optional, default: true
+#      disableCaller: false                # Optional, default: false
+#      disableStacktrace: true             # Optional, default: true
+#      sampling:                           # Optional, default: empty map
+#        initial: 0
+#        thereafter: 0
+#      encoding: console                   # Optional, default: "console", options: [console, json]
+#      encoderConfig:
+#        messageKey: "msg"                 # Optional, default: "msg"
+#        levelKey: "level"                 # Optional, default: "level"
+#        timeKey: "ts"                     # Optional, default: "ts"
+#        nameKey: "logger"                 # Optional, default: "logger"
+#        callerKey: "caller"               # Optional, default: "caller"
+#        functionKey: ""                   # Optional, default: ""
+#        stacktraceKey: "msg"              # Optional, default: "msg"
+#        lineEnding: "\n"                  # Optional, default: "\n"
+#        levelEncoder: "capitalColor"      # Optional, default: "capitalColor", options: [capital, capitalColor, color, lowercase]
+#        timeEncoder: "iso8601"            # Optional, default: "iso8601", options: [rfc3339nano, RFC3339Nano, rfc3339, RFC3339, iso8601, ISO8601, millis, nanos]
+#        durationEncoder: "string"         # Optional, default: "string", options: [string, nanos, ms]
+#        callerEncoder: ""                 # Optional, default: ""
+#        nameEncoder: ""                   # Optional, default: ""
+#        consoleSeparator: ""              # Optional, default: ""
+#      outputPaths: [ "stdout" ]           # Optional, default: ["stdout"], stdout would be replaced if specified
+#      errorOutputPaths: [ "stderr" ]      # Optional, default: ["stderr"], stderr would be replaced if specified
+#      initialFields:                      # Optional, default: empty map
+#        key: "value"
+#    lumberjack:                           # Optional
+#      filename: "rkapp.log"               # Optional, default: It uses <processname>-lumberjack.log in os.TempDir() if empty.
+#      maxsize: 1024                       # Optional, default: 1024 (MB)
+#      maxage: 7                           # Optional, default: 7 (days)
+#      maxbackups: 3                       # Optional, default: 3 (days)
+#      localtime: true                     # Optional, default: true
+#      compress: true                      # Optional, default: true
+#eventLogger:
+#  - name: event-logger
+#config:
+#  - name: my-config
+#    locale: "*::*::*::*"
+#    path: config/default.yaml
+#  - name: my-config
+#    locale: "*::singapore::*::*"
+#    path: config/singapore.yaml
+#  - name: my-config
+#    locale: "*::frankfurt::*::*"
+#    path: config/frankfurt.yaml
+#cert:
+#  - name: "local-cert"                     # Required
+#    description: "Description of entry"    # Optional
+#    provider: "localFs"                    # Required, etcd, consul, localFs, remoteFs are supported options
+#    locale: "*::*::*::*"                   # Optional, default: *::*::*::*
+#    serverCertPath: "cert/server.pem"      # Optional, default: "", path of certificate on local FS
+#    serverKeyPath: "cert/server-key.pem"   # Optional, default: "", path of certificate on local FS
+#  - name: "remote-cert"                    # Required
+#    description: "Description of entry"    # Optional
+#    provider: "remoteFs"                   # Required, etcd, consul, localFs, remoteFs are supported options
+#    endpoint: "localhost:8081"             # Required, both http://x.x.x.x or x.x.x.x are acceptable
+#    locale: "*::*::*::*"                   # Optional, default: *::*::*::*
+#    serverCertPath: "cert/server.pem"      # Optional, default: "", path of certificate on local FS
+#    serverKeyPath: "cert/server-key.pem"   # Optional, default: "", path of certificate on local FS
+#  - name: "consul-cert"                    # Required
+#    provider: "consul"                     # Required, etcd, consul, localFS, remoteFs are supported options
+#    description: "Description of entry"    # Optional
+#    locale: "*::*::*::*"                   # Optional, default: *::*::*::*
+#    endpoint: "localhost:8500"             # Required, http://x.x.x.x or x.x.x.x both acceptable.
+#    datacenter: "dc1"                      # Optional, default: "", consul datacenter
+#    serverCertPath: "server.pem"           # Optional, default: "", key of value in consul
+#    serverKeyPath: "server-key.pem"        # Optional, default: "", key of value in consul
+#  - name: "etcd-cert"                      # Required
+#    description: "Description of entry"    # Optional
+#    provider: "etcd"                       # Required, etcd, consul, localFs, remoteFs are supported options
+#    locale: "*::*::*::*"                   # Optional, default: *::*::*::*
+#    endpoint: "localhost:2379"             # Required, http://x.x.x.x or x.x.x.x both acceptable.
+#    serverCertPath: "server.pem"           # Optional, default: "", key of value in etcd
+#    serverKeyPath: "server-key.pem"        # Optional, default: "", key of value in etcd
+gin:
+  - name: greeter
+    port: 8080
+#    cert:
+#      ref: "etcd-cert"
+#    logger:
+#      zapLogger:
+#        ref: zap-logger
+#    sw:
+#      enabled: true
+#      jsonPath: "docs"
+    commonService:
+      enabled: true
+#    tv:
+#      enabled:  true
+#    prom:
+#      enabled : true
+#      pusher:
+#        enabled : true
+#        jobName: "demo"
+#        remoteAddress: "localhost:9091"
+#        intervalMs: 2000
+#        basicAuth: "user:pass"
+#        cert:
+#          ref: "ref"
+    interceptors:
+#      auth:
+#        enabled: true
+#        apiKey: ["token"]
+#        basic: ["user:pass"]
+#        ignorePrefix: ["/rk/v1/healthy"]
+#      tracingTelemetry:
+#        enabled: true
+#        exporter:
+#          file:
+#            enabled: false
+#            outputPath: "logs/tracing.log"
+#          jaeger:
+#            enabled: true
+#            collectorEndpoint: "localhost:16368/api/trace"
+#            collectorUsername: ""
+#            collectorPassword: ""
+#      meta:
+#        enabled: true
+#        prefix: "Override"
+      loggingZap:
+        enabled: true
+#        zapLoggerEncoding: "json"
+#        zapLoggerOutputPaths: ["logs/app.log"]
+#        eventLoggerEncoding: "json"
+#        eventLoggerOutputPaths: ["logs/event.log"]
+#      metricsProm:
+#        enabled: true
+#  - name: bob
+#    port: 8081
+#    commonService:
+#      enabled: true

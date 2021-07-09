@@ -1,4 +1,0 @@
----
-gin:
-  - name: greeter
-    port: 8080

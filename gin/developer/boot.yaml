@@ -1,0 +1,5 @@
+---
+myEntry:
+  enabled: true
+  name: my-entry
+  description: "This is my entry."

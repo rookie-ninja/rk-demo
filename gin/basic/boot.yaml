@@ -1,0 +1,49 @@
+---
+gin:
+  - name: greeter
+    port: 8080
+#    sw:
+#      enabled: true
+#      jsonPath: "docs"
+#    commonService:
+#      enabled: true
+#    tv:
+#      enabled:  true
+#    prom:
+#      enabled : true
+#      pusher:
+#        enabled : true
+#        jobName: "demo"
+#        remoteAddress: "localhost:9091"
+#        intervalMs: 2000
+#        basicAuth: "user:pass"
+#        cert:
+#          ref: "ref"
+#    interceptors:
+#      auth:
+#        enabled: true
+#        apiKey: ["token"]
+#        basic: ["user:pass"]
+#        ignorePrefix: ["/rk/v1/healthy"]
+#      tracingTelemetry:
+#        enabled: true
+#        exporter:
+#          file:
+#            enabled: false
+#            outputPath: "logs/tracing.log"
+#          jaeger:
+#            enabled: true
+#            collectorEndpoint: "localhost:16368/api/trace"
+#            collectorUsername: ""
+#            collectorPassword: ""
+#      meta:
+#        enabled: true
+#        prefix: "Override"
+#      loggingZap:
+#        enabled: true
+#        zapLoggerEncoding: "json"
+#        zapLoggerOutputPaths: ["logs/app.log"]
+#        eventLoggerEncoding: "json"
+#        eventLoggerOutputPaths: ["logs/event.log"]
+#      metricsProm:
+#        enabled: true

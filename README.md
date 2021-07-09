@@ -2,7 +2,7 @@
 Demo application with rk-boot.
 
 ## Gin Server Demo
-- [Simple Server](gin/entry-level)
+- [Simple Server](gin/basic)
 - [With swagger UI](gin/2-server-with-swagger)
 - [With common service](gin/3-server-with-common-service)
 - [With prometheus client](gin/4-server-with-prometheus)

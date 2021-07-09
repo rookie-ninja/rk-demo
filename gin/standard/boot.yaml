@@ -36,3 +36,5 @@ gin:
         enabled: true
       meta:
         enabled: true
+      tracingTelemetry:
+        enabled: true
