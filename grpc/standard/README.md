@@ -1,5 +1,5 @@
 # Demo
-Rk style golang server package with gin entry enabled.
+Rk style golang server package with grpc entry enabled.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -35,29 +35,36 @@ go get -u github.com/rookie-ninja/rk/cmd/rk
 ```
 
 ## Install tools
-In order to generate swagger for gin API, we are using [swag](https://github.com/swaggo/swag) command line tool.
+In order to generate swagger for grpc API, we need to install a couple of command line tools.
 
-- Install swag
+- Install
 ```
-$ rk install swag
-```
+# List available installation
+$ rk install
+COMMANDS:
+    buf                      install buf on local machine
+    cfssl                    install cfssl on local machine
+    cfssljson                install cfssljson on local machine
+    gocov                    install gocov on local machine
+    golangci-lint            install golangci-lint on local machine
+    mockgen                  install mockgen on local machine
+    pkger                    install pkger on local machine
+    protobuf                 install protobuf on local machine
+    protoc-gen-doc           install protoc-gen-doc on local machine
+    protoc-gen-go            install protoc-gen-go on local machine
+    protoc-gen-go-grpc       install protoc-gen-go-grpc on local machne
+    protoc-gen-grpc-gateway  install protoc-gen-grpc-gateway on local machine
+    protoc-gen-openapiv2     install protoc-gen-openapiv2 on local machine
+    swag                     install swag on local machine
+    rk-std                   install rk standard environment on local machine
+    help, h                  Shows a list of commands or help for one command
 
-[swag](https://github.com/swaggo/swag) need API function to be commented in order to generate swagger config file. swagger files
-will be generated at ./docs folder by default.
-- Example
-``` go
-// @Summary Greeter service
-// @Id 1
-// @version 1.0
-// @produce application/json
-// @Param name query string true "Input name"
-// @Success 200 {object} GreeterResponse
-// @Router /v1/greeter [get]
-func Greeter(ctx *gin.Context) {
-	ctx.JSON(http.StatusOK, &GreeterResponse{
-		Message: fmt.Sprintf("Hello %s!", ctx.Query("name")),
-	})
-}
+# Install buf, protoc-gen-go, protoc-gen-go-grpc, protoc-gen-grpc-gateway, protoc-gen-openapiv2
+$ rk install protoc-gen-go
+$ rk install protoc-gen-go-grpc
+$ rk install protoc-gen-go-grpc-gateway
+$ rk install protoc-gen-openapiv2
+$ rk install buf
 ```
 
 ## Build locally
@@ -74,10 +81,10 @@ build:
 #  GOOS: ""                          # Optional, default: current OS
 #  GOARCH: ""                        # Optional, default: current Arch
 #  args: ""                          # Optional, default: "", arguments which will attached to [go build] command
-  copy: ["docs"]                     # Optional, default: [], directories or files need to copy to [target] folder
+  copy: ["api"]                     # Optional, default: [], directories or files need to copy to [target] folder
   commands:
     before:
-      - "swag init --parseInternal --propertyStrategy camelcase"
+      - "buf generate --path api/v1"
 #   after: []                        # Optional, default: [], commands would be invoked after [go build] command locally
 #  scripts:
 #    before: []                      # Optional, default: [], scripts would be executed before [go build] command locally
@@ -94,13 +101,19 @@ docker:
 ./target folder will be generated with compiled binary file.
 ```shell script
 └── target
+    ├── api
+    │   ├── gen
+    │   │   └── v1
+    │   │       ├── greeter.pb.go
+    │   │       ├── greeter.pb.gw.go
+    │   │       ├── greeter.swagger.json
+    │   │       └── greeter_grpc.pb.go
+    │   └── v1
+    │       ├── greeter.proto
+    │       └── gw_mapping.yaml
     ├── bin
-    │ └── rk-demo
-    ├── boot.yaml
-    └── docs
-        ├── docs.go
-        ├── swagger.json
-        └── swagger.yaml
+    │   └── rk-demo
+    └── boot.yaml
 ```
 
 ### With go build
@@ -177,7 +190,7 @@ $ rk clear
 ```
 
 ## boot.yaml
-Since we are using gin framework, please refer [rk-gin](https://github.com/rookie-ninja/rk-gin) for details.
+Since we are using grpc framework, please refer [rk-grpc](https://github.com/rookie-ninja/rk-grpc) for details.
 
 ## build.yaml
 Since we are using rk cmd, please refer [rk](https://github.com/rookie-ninja/rk) for details.

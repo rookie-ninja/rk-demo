@@ -93,13 +93,13 @@ gin:
 #    logger:
 #      zapLogger:
 #        ref: zap-logger
-#    sw:
-#      enabled: true
-#      jsonPath: "docs"
+    sw:
+      enabled: true
+      jsonPath: "docs"
     commonService:
       enabled: true
-#    tv:
-#      enabled:  true
+    tv:
+      enabled:  true
 #    prom:
 #      enabled : true
 #      pusher:

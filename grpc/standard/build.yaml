@@ -5,10 +5,10 @@ build:
 #  GOOS: ""                          # Optional, default: current OS
 #  GOARCH: ""                        # Optional, default: current Arch
 #  args: ""                          # Optional, default: "", arguments which will attached to [go build] command
-  copy: ["docs"]                     # Optional, default: [], directories or files need to copy to [target] folder
+  copy: ["api"]                     # Optional, default: [], directories or files need to copy to [target] folder
   commands:
     before:
-      - "swag init --parseInternal --propertyStrategy camelcase"
+      - "buf generate --path api/v1"
 #   after: []                        # Optional, default: [], commands would be invoked after [go build] command locally
 #  scripts:
 #    before: []                      # Optional, default: [], scripts would be executed before [go build] command locally

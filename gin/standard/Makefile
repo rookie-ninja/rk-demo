@@ -14,7 +14,7 @@ fmt:
 .PHONY: swag
 swag:
 	@echo "[swag] Running swag... (Looking up at internal/ and output to ./docs)"
-	@swag init --parseInternal --dir internal --propertyStrategy camelcase
+	@swag init --parseInternal --propertyStrategy camelcase
 
 .PHONY: doctoc
 doctoc:
