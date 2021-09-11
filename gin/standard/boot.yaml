@@ -14,7 +14,7 @@ eventLogger:
       - "stdout"
 gin:
   - name: greeter
-    port: 8080
+    port: 8089
     sw:
       enabled: true
       jsonPath: "docs"

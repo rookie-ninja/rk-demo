@@ -20,14 +20,14 @@ func main() {
 
 	// Get grpc entry with name
 	grpcEntry := boot.GetGrpcEntry("greeter")
-	grpcEntry.AddGrpcRegFuncs(registerGreeter)
-	grpcEntry.AddGwRegFuncs(greeter.RegisterGreeterHandlerFromEndpoint)
+	grpcEntry.AddRegFuncGrpc(registerGreeter)
+	grpcEntry.AddRegFuncGw(greeter.RegisterGreeterHandlerFromEndpoint)
 
 	// Bootstrap
 	boot.Bootstrap(context.Background())
 
 	// Attachment upload from http/s handled manually
-	grpcEntry.GwEntry.GwMux.HandlePath("POST", "/v1/files", handleBinaryFileUpload)
+	grpcEntry.GwMux.HandlePath("POST", "/v1/files", handleBinaryFileUpload)
 
 	// Wait for shutdown sig
 	boot.WaitForShutdownSig(context.Background())

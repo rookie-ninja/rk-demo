@@ -17,30 +17,25 @@
 #    serverKeyPath: "cert/server-key.pem"   # Optional, default: "", path of certificate on local FS
 grpc:
   - name: greeter                   # Name of grpc entry
-    port: 1949                      # Port of grpc entry
+    port: 8080                      # Port of grpc entry
+    enableReflection: true          # Enable grpc reflection
+    enableRkGwOption: true          # Enable rk style grpc gateway server option
 #    cert:
 #      ref: "local-cert"
-#    reflection: true
 #    logger:
 #      eventLogger:
 #        ref: event-logger
 #    commonService:
-#      enabled: true                 # Enable common service for testing
-    gw:
-      enabled: true                 # Enable grpc-gateway, https://github.com/grpc-ecosystem/grpc-gateway
-      port: 8080                    # Port of grpc-gateway
-#      cert:
-#        ref: "local-cert"
-#      prom:
-#        enabled: true               # Enable prometheus client
-      tv:
-        enabled: true
-#      rkServerOption: true          # Enable RK style server options
-      gwMappingFilePaths:
-        - "api/v1/gw_mapping.yaml"  # Boot will look for gateway mapping files and load information into memory
-      sw:
-        enabled: true
-        jsonPath: "api/gen/v1"
+#      enabled: true                # Enable common service for testing
+    prom:
+      enabled: true                 # Enable prometheus client
+    tv:
+      enabled: true
+    gwMappingFilePaths:
+      - "api/v1/gw_mapping.yaml"    # Boot will look for gateway mapping files and load information into memory
+    sw:
+      enabled: true
+      jsonPath: "api/gen/v1"
 #    interceptors:
 #      auth:
 #        enabled: true                # Enable auth interceptor/middleware

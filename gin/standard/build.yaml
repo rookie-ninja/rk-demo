@@ -19,4 +19,4 @@ docker:
 #    tag: ""                         # Optional, default: [current git tag or branch-latestCommit]
 #    args: [""]                      # Optional, default: "", docker args which will be attached to [docker build] command
   run:
-    args: ["-p", "8080:8080"]        # Optional, default: "", docker args which will be attached to [docker run] command
+    args: ["-p", "8089:8089"]        # Optional, default: "", docker args which will be attached to [docker run] command

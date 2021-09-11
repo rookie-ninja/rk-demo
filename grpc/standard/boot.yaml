@@ -14,22 +14,20 @@ eventLogger:
       - "stdout"
 grpc:
   - name: greeter                   # Name of grpc entry
-    port: 1949                      # Port of grpc entry
+    port: 8080                      # Port of grpc entry
+    enableReflection: true
+    enableRkGwOption: true
     commonService:
       enabled: true                 # Enable common service for testing
-    gw:
-      enabled: true                 # Enable grpc-gateway, https://github.com/grpc-ecosystem/grpc-gateway
-      port: 8080                    # Port of grpc-gateway
-      prom:
-        enabled: true               # Enable prometheus client
-      tv:
-        enabled: true
-      rkServerOption: true          # Enable RK style server options
-      gwMappingFilePaths:
-        - "api/v1/gw_mapping.yaml"  # Boot will look for gateway mapping files and load information into memory
-      sw:
-        enabled: true
-        jsonPath: "api/gen/v1"
+    prom:
+      enabled: true               # Enable prometheus client
+    tv:
+      enabled: true
+    gwMappingFilePaths:
+      - "api/v1/gw_mapping.yaml"  # Boot will look for gateway mapping files and load information into memory
+    sw:
+      enabled: true
+      jsonPath: "api/gen/v1"
     interceptors:
       tracingTelemetry:
         enabled: true

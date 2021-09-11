@@ -19,8 +19,8 @@ func main() {
 
 	// Get grpc entry with name
 	grpcEntry := boot.GetGrpcEntry("greeter")
-	grpcEntry.AddGrpcRegFuncs(registerGreeter)
-	grpcEntry.AddGwRegFuncs(greeter.RegisterGreeterHandlerFromEndpoint)
+	grpcEntry.AddRegFuncGrpc(registerGreeter)
+	grpcEntry.AddRegFuncGw(greeter.RegisterGreeterHandlerFromEndpoint)
 
 	// Bootstrap
 	boot.Bootstrap(context.Background())
