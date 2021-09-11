@@ -73,6 +73,7 @@ Edit build.yaml file with customization.
 ```shell script
 $ rk build
 ```
+- build.yaml
 ```yaml
 ---
 build:
@@ -152,6 +153,7 @@ $ rk pack
 ## Docker build
 ### With RK
 Please add docker build args as needed in build.yaml file.
+- build.yaml
 ```yaml
 docker:
   build:
@@ -174,6 +176,7 @@ $ docker images
 ## Docker run
 ### With RK
 Docker file needs to be exist.
+- Dockerfile
 ```dockerfile
 FROM alpine
 
@@ -188,6 +191,7 @@ CMD ["bin/demo"]
 ```
 
 Please add docker run args as needed in build.yaml file.
+- build.yaml
 ```yaml
 docker:
   run:
