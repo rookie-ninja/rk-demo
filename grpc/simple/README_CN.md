@@ -1,47 +1,47 @@
-# Demo 
-**[中文版](README_CN.md)**
+# Demo
+**[English](README.md)**
 
-Rk style golang server package with grpc entry enabled.
+Golang 微服务标准包，使用 rk-boot 来启动 grpc 服务。
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Prerequisite](#prerequisite)
-- [Install tools](#install-tools)
-- [Build locally](#build-locally)
-  - [With RK](#with-rk)
-  - [With go build](#with-go-build)
-- [Run locally](#run-locally)
-  - [With RK](#with-rk-1)
-  - [With go run](#with-go-run)
-  - [With IDE](#with-ide)
-- [Pack locally](#pack-locally)
-  - [With RK](#with-rk-2)
-- [Docker build](#docker-build)
-  - [With RK](#with-rk-3)
-  - [With docker build](#with-docker-build)
-- [Docker run](#docker-run)
-  - [With RK](#with-rk-4)
-- [Clear locally](#clear-locally)
+- [前提条件](#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6)
+- [安装工具](#%E5%AE%89%E8%A3%85%E5%B7%A5%E5%85%B7)
+- [本地编译](#%E6%9C%AC%E5%9C%B0%E7%BC%96%E8%AF%91)
+  - [通过 RK](#%E9%80%9A%E8%BF%87-rk)
+  - [通过 go build 命令](#%E9%80%9A%E8%BF%87-go-build-%E5%91%BD%E4%BB%A4)
+- [本地运行](#%E6%9C%AC%E5%9C%B0%E8%BF%90%E8%A1%8C)
+  - [通过 RK](#%E9%80%9A%E8%BF%87-rk-1)
+  - [通过 go run](#%E9%80%9A%E8%BF%87-go-run)
+  - [通过 IDE](#%E9%80%9A%E8%BF%87-ide)
+- [本地打包](#%E6%9C%AC%E5%9C%B0%E6%89%93%E5%8C%85)
+  - [通过 RK](#%E9%80%9A%E8%BF%87-rk-2)
+- [Docker 编译](#docker-%E7%BC%96%E8%AF%91)
+  - [通过 RK](#%E9%80%9A%E8%BF%87-rk-3)
+  - [通过 docker build](#%E9%80%9A%E8%BF%87-docker-build)
+- [本地运行 Docker](#%E6%9C%AC%E5%9C%B0%E8%BF%90%E8%A1%8C-docker)
+  - [通过 RK](#%E9%80%9A%E8%BF%87-rk-4)
+- [清理本地缓存](#%E6%B8%85%E7%90%86%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98)
 - [boot.yaml](#bootyaml)
 - [build.yaml](#buildyaml)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Prerequisite
-[rk](https://github.com/rookie-ninja/rk) command line tool is recommended in order to build project at enterprise level.
+## 前提条件
+推荐下载 [rk](https://github.com/rookie-ninja/rk) 命令行工具来配置 grpc 所需要的环境。
 
 ```shell script
 go get -u github.com/rookie-ninja/rk/cmd/rk
 ```
 
-## Install tools
-In order to generate swagger for grpc API, we need to install a couple of command line tools.
+## 安装工具
+为了生成 swagger, 编译 protocol buffer，我们需要安装如下的工具。
 
-- Install
+- 安装
 ```
-# List available installation
+# 列出可安装的工具
 $ rk install
 COMMANDS:
     buf                      install buf on local machine
@@ -61,7 +61,7 @@ COMMANDS:
     rk-std                   install rk standard environment on local machine
     help, h                  Shows a list of commands or help for one command
 
-# Install buf, protoc-gen-go, protoc-gen-go-grpc, protoc-gen-grpc-gateway, protoc-gen-openapiv2
+# 安装 buf, protoc-gen-go, protoc-gen-go-grpc, protoc-gen-grpc-gateway, protoc-gen-openapiv2
 $ rk install protoc-gen-go
 $ rk install protoc-gen-go-grpc
 $ rk install protoc-gen-go-grpc-gateway
@@ -69,9 +69,9 @@ $ rk install protoc-gen-openapiv2
 $ rk install buf
 ```
 
-## Build locally
-### With RK
-Edit build.yaml file with customization.
+## 本地编译
+### 通过 RK
+请编辑 build.yaml 文件来修改默认编译过程。
 ```shell script
 $ rk build
 ```
@@ -101,7 +101,7 @@ docker:
     args: ["-p", "8080:8080"]        # Optional, default: "", docker args which will be attached to [docker run] command
 ```
 
-./target folder will be generated with compiled binary file.
+./target 文件夹将会被创建，里面包含了编译好的二进制可运行文件。
 ```shell script
 └── target
     ├── api
@@ -119,32 +119,32 @@ docker:
     └── boot.yaml
 ```
 
-### With go build
+### 通过 go build 命令
 ```shell script
 $ go build main.go
 ```
 
-## Run locally
-### With RK
+## 本地运行
+### 通过 RK
 ```shell script
 $ rk run
 ```
 - RK tv: http://localhost:8080/rk/v1/tv/
 - Swagger: http://localhost:8080/sw
 - Prometheus metrics: http://localhost:8080/metrics
-- Logs: stdout or target/logs folder
+- 日志: stdout 或者 target/logs 文件夹
 
-### With go run
+### 通过 go run
 ```shell script
 $ go run main.go
 ```
 
-### With IDE
-Write click main.go file and run it!
+### 通过 IDE
+右键点击 main.go 文件来运行。
 
-## Pack locally
-### With RK
-rk will build project and create a [packageName-version.tar.gz] file by compressing target folder generated.
+## 本地打包
+### 通过 RK
+rk 命令行会编译并且创建 tag.gz 格式的压缩包，命名格式：[packageName-version.tar.gz]
 ```shell script
 $ rk pack
 ```
@@ -152,9 +152,9 @@ $ rk pack
 ├── rk-demo-master-b233d43.tar.gz
 ```
 
-## Docker build
-### With RK
-Docker file needs to be exist.
+## Docker 编译
+### 通过 RK
+Dockerfile 是必须的前提条件。
 - Dockerfile
 ```dockerfile
 FROM alpine
@@ -165,10 +165,10 @@ RUN mkdir -p $WD
 WORKDIR $WD
 COPY target/ $WD
 
-# By default, rk command will build main.go to suffix of module name in go.mod file
+# 默认情况下，rk 命令行会在 go.mod 文件中寻找 module，并且以 module 的名字作为 main.go 的编译输出。
 CMD ["bin/demo"]
 ```
-Please add docker build args as needed in build.yaml file.
+请在 args 中添加 docker 命令行所需要的参数。
 - build.yaml
 ```yaml
 docker:
@@ -186,12 +186,12 @@ $ docker images
   rk-demo  master-b233d43   2a76b06fd150   16 seconds ago   45.7MB
 ```
 
-### With docker build
+### 通过 docker build
 [docker build](https://docs.docker.com/engine/reference/commandline/build/)
 
-## Docker run
-### With RK
-Docker file needs to be exist.
+## 本地运行 Docker
+### 通过 RK
+Dockerfile 是必须的前提条件。
 - Dockerfile
 ```dockerfile
 FROM alpine
@@ -202,11 +202,11 @@ RUN mkdir -p $WD
 WORKDIR $WD
 COPY target/ $WD
 
-# By default, rk command will build main.go to suffix of module name in go.mod file
+# 默认情况下，rk 命令行会在 go.mod 文件中寻找 module，并且以 module 的名字作为 main.go 的编译输出。
 CMD ["bin/demo"]
 ```
 
-Please add docker run args as needed in build.yaml file.
+请在 args 中添加 docker 命令行所需要的参数。
 - build.yaml
 ```yaml
 docker:
@@ -217,14 +217,14 @@ docker:
 $ rk docker run
 ```
 
-## Clear locally
-Delete target/ folder.
+## 清理本地缓存
+rk 命令行将会删除 target/ 文件夹。
 ```shell script
 $ rk clear
 ```
 
 ## boot.yaml
-Since we are using grpc framework, please refer [rk-grpc](https://github.com/rookie-ninja/rk-grpc) for details.
+我们采用 grpc 作为底层框架，请参考：[rk-grpc](https://github.com/rookie-ninja/rk-grpc)
 
 ## build.yaml
-Since we are using rk cmd, please refer [rk](https://github.com/rookie-ninja/rk) for details.
+我们采用 rk 命令行进行编译，请参考：[rk](https://github.com/rookie-ninja/rk)
