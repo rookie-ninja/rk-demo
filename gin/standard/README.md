@@ -31,7 +31,7 @@ Rk style golang server package with gin entry enabled.
 [rk](https://github.com/rookie-ninja/rk) command line tool is recommended in order to build project at enterprise level.
 
 ```shell script
-go get -u github.com/rookie-ninja/rk/cmd/rk
+go get github.com/rookie-ninja/rk/cmd/rk
 ```
 
 ## Install tools

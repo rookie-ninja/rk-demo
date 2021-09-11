@@ -14,12 +14,12 @@ eventLogger:
       - "stdout"
 gin:
   - name: greeter
-    port: 8089
+    port: 8080
+    commonService:
+      enabled: true
     sw:
       enabled: true
       jsonPath: "docs"
-    commonService:
-      enabled: true
     tv:
       enabled:  true
     prom:
@@ -35,6 +35,4 @@ gin:
       metricsProm:
         enabled: true
       meta:
-        enabled: true
-      tracingTelemetry:
         enabled: true

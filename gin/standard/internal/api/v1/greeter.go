@@ -19,7 +19,7 @@ func Greeter(ctx *gin.Context) {
 	})
 }
 
-// Response.
+// GreeterResponse Response of /v1/greeter.
 type GreeterResponse struct {
 	Message string
 }

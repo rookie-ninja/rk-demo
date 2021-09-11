@@ -1,11 +1,9 @@
 FROM alpine
 
-ENV WD=/rk/service/
+ENV WD=/usr/service/
 
 RUN mkdir -p $WD
 WORKDIR $WD
 COPY target/ $WD
-
-EXPOST 8080
 
 CMD ["bin/rk-demo"]

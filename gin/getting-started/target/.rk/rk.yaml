@@ -1,0 +1,15 @@
+git:
+  branch: master
+  commit:
+    committer:
+      email: dongxuny@gmail.com
+      name: dongxuny
+    date: Sat Sep 11 15:25:44 2021 +0800
+    id: d643cdb738d8c63e7b14e040582185e6892ce5f9
+    idAbbr: d643cdb
+    sub: |
+      Bump up rk-boot version to v1.2.3
+  tag: ""
+  url: https://github.com/rookie-ninja/rk-demo
+name: gin-demo
+version: master-d643cdb

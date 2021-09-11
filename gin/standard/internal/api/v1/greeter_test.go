@@ -2,7 +2,10 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/stretchr/testify/assert"
+	httptest "github.com/stretchr/testify/http"
 	"net/http"
+	"net/url"
 	"testing"
 )
 
@@ -11,29 +14,19 @@ func init() {
 }
 
 func TestGreeter_HappyCase(t *testing.T) {
-	ctx, _ := gin.CreateTestContext(&mockResponseWriter{})
-	ctx.Params = []gin.Param{
-		{
-			Key:   "name",
-			Value: "ut",
+	// Create a mock writer
+	w := &httptest.TestResponseWriter{}
+
+	// Create a gin context and inject query(name=ut) into it
+	ctx, _ := gin.CreateTestContext(w)
+	ctx.Request = &http.Request{
+		URL: &url.URL{
+			RawQuery: "name=ut",
 		},
 	}
 
+	// Call gin handler
 	Greeter(ctx)
+	// Assert expected result
+	assert.Contains(t, w.Output, "Hello ut!")
 }
-
-type mockResponseWriter struct{}
-
-func (m *mockResponseWriter) Header() (h http.Header) {
-	return http.Header{}
-}
-
-func (m *mockResponseWriter) Write(p []byte) (n int, err error) {
-	return len(p), nil
-}
-
-func (m *mockResponseWriter) WriteString(s string) (n int, err error) {
-	return len(s), nil
-}
-
-func (m *mockResponseWriter) WriteHeader(int) {}
