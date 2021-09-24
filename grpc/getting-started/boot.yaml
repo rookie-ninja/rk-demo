@@ -2,6 +2,7 @@
 grpc:
   - name: greeter                   # Name of grpc entry
     port: 8080                      # Port of grpc entry
+    enabled: true                   # Enable grpc entry
     enableReflection: true          # Enable grpc server reflection, https://github.com/grpc/grpc/blob/master/doc/server-reflection.md
     enableRkGwOption: true
     commonService:

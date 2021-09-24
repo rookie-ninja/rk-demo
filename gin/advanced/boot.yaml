@@ -88,6 +88,7 @@ app:
 gin:
   - name: greeter
     port: 8080
+    enabled: true
 #    cert:
 #      ref: "etcd-cert"
 #    logger:
