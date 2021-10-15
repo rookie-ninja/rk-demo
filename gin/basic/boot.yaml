@@ -30,13 +30,18 @@ gin:
 #        enabled: true
 #        exporter:
 #          file:
-#            enabled: false
-#            outputPath: "logs/tracing.log"
-#          jaeger:
 #            enabled: true
-#            collectorEndpoint: "localhost:16368/api/trace"
-#            collectorUsername: ""
-#            collectorPassword: ""
+#            outputPath: "logs/trace.log"
+#          jaeger:
+#            agent:
+#              enabled: true
+#              host: ""
+#              port: 0
+#            collector:
+#              enabled: true
+#              endpoint: ""
+#              username: ""
+#              password: ""
 #      meta:
 #        enabled: true
 #        prefix: "Override"

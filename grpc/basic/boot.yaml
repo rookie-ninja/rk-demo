@@ -7,8 +7,8 @@ grpc:
     enableRkGwOption: true
     commonService:
       enabled: true                 # Enable common service for testing
-#    prom:
-#      enabled: true               # Enable prometheus client
+    prom:
+      enabled: true               # Enable prometheus client
 #    tv:
 #      enabled: true
 #    gwMappingFilePaths:
@@ -16,7 +16,7 @@ grpc:
 #    sw:
 #      enabled: true
 #      jsonPath: "api/gen/v1"
-#    interceptors:
+    interceptors:
 #      auth:
 #        enabled: true                # Enable auth interceptor/middleware
 #        basic: ["user:pass"]         # Enable basic auth
@@ -30,8 +30,8 @@ grpc:
 #          file:
 #            enabled: true
 #            outputPath: "stdout"
-#      metricsProm:
-#        enabled: true
+      metricsProm:
+        enabled: true
 #      loggingZap:
 #        enabled: true
 #      meta:

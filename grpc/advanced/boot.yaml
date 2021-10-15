@@ -44,13 +44,21 @@ grpc:
 #        ignorePrefix: ["/rk.api.v1.RkCommonService/Healthy"]
 #        apiKey: ["token"]
 #      tracingTelemetry:
-#        enabled: true
-#        exporter:
-#          jaeger:
-#            enabled: true
+#        enabled: true                                  # Optional, default: false
+#        exporter:                                      # Optional, default will create a stdout exporter
 #          file:
-#            enabled: true
-#            outputPath: "stdout"
+#            enabled: true                              # Optional, default: false
+#            outputPath: "logs/trace.log"               # Optional, default: stdout
+#          jaeger:
+#            agent:
+#              enabled: true                           # Optional, default: false
+#              host: ""                                # Optional, default: localhost
+#              port: 0                                 # Optional, default: 6831
+#            collector:
+#              enabled: true                           # Optional, default: false
+#              endpoint: ""                            # Optional, default: http://localhost:14268/api/traces
+#              username: ""                            # Optional, default: ""
+#              password: ""                            # Optional, default: ""
 #      metricsProm:
 #        enabled: true
 #      loggingZap:
