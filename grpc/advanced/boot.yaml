@@ -26,8 +26,8 @@ grpc:
 #    logger:
 #      eventLogger:
 #        ref: event-logger
-#    commonService:
-#      enabled: true                # Enable common service for testing
+    commonService:
+      enabled: true                # Enable common service for testing
     prom:
       enabled: true                 # Enable prometheus client
     tv:
@@ -66,3 +66,10 @@ grpc:
 #      meta:
 #        enabled: true
 #        prefix: Override
+#      rateLimit:
+#        enabled: true
+#        algorithm: "leakyBucket"
+#        reqPerSec: 0
+#        paths:
+#          - path: "/rk.api.v1.RkCommonService/Healthy"
+#            reqPerSec: 0

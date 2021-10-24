@@ -37,3 +37,10 @@ grpc:
 #      meta:
 #        enabled: true
 #        prefix: Override
+#      rateLimit:
+#        enabled: true
+#        algorithm: "leakyBucket"
+#        reqPerSec: 0
+#        paths:
+#          - path: "/rk.api.v1.RkCommonService/Healthy"
+#            reqPerSec: 0

@@ -53,3 +53,10 @@ gin:
 #        eventLoggerOutputPaths: ["logs/event.log"]
 #      metricsProm:
 #        enabled: true
+#      rateLimit:
+#        enabled: false
+#        algorithm: "leakyBucket"
+#        reqPerSec: 0
+#        paths:
+#          - path: "/rk/v1/healthy"
+#            reqPerSec: 0
