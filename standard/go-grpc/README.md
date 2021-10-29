@@ -72,10 +72,13 @@ $ rk install buf
 ## Build locally
 ### With RK
 Edit build.yaml file with customization.
+
 ```shell script
 $ rk build
 ```
+
 - build.yaml
+
 ```yaml
 ---
 build:
@@ -102,6 +105,7 @@ docker:
 ```
 
 ./target folder will be generated with compiled binary file.
+
 ```shell script
 └── target
     ├── api
@@ -156,6 +160,7 @@ $ rk pack
 ### With RK
 Docker file needs to be exist.
 - Dockerfile
+
 ```dockerfile
 FROM alpine
 
@@ -168,8 +173,10 @@ COPY target/ $WD
 # By default, rk command will build main.go to suffix of module name in go.mod file
 CMD ["bin/demo"]
 ```
+
 Please add docker build args as needed in build.yaml file.
 - build.yaml
+
 ```yaml
 docker:
   build:
@@ -181,6 +188,7 @@ docker:
 ```shell script
 $ rk docker build
 ```
+
 ```shell script
 $ docker images
   rk-demo  master-b233d43   2a76b06fd150   16 seconds ago   45.7MB
@@ -193,6 +201,7 @@ $ docker images
 ### With RK
 Docker file needs to be exist.
 - Dockerfile
+
 ```dockerfile
 FROM alpine
 
@@ -208,6 +217,7 @@ CMD ["bin/demo"]
 
 Please add docker run args as needed in build.yaml file.
 - build.yaml
+
 ```yaml
 docker:
   run:
@@ -219,6 +229,7 @@ $ rk docker run
 
 ## Clear locally
 Delete target/ folder.
+
 ```shell script
 $ rk clear
 ```

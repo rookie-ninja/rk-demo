@@ -12,9 +12,13 @@
 #  - name: "local-cert"                     # Required
 #    description: "Description of entry"    # Optional
 #    provider: "localFs"                    # Required, etcd, consul, localFs, remoteFs are supported options
-#    locale: "*::*::*::*"                   # Optional, default: *::*::*::*
+#    locale: "*::*::*::*"                   # Required, default: ""
 #    serverCertPath: "cert/server.pem"      # Optional, default: "", path of certificate on local FS
 #    serverKeyPath: "cert/server-key.pem"   # Optional, default: "", path of certificate on local FS
+config:
+  - name: my-config
+    locale: "*::*::*::*"
+    path: config/default.yaml
 grpc:
   - name: greeter                   # Name of grpc entry
     port: 8080                      # Port of grpc entry

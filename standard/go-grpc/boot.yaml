@@ -6,6 +6,8 @@ grpc:
     enabled: true                   # Required, Enable grpc entry
     commonService:
       enabled: true                 # Optional, Enable common service, default: false
+    gwMappingFilePaths:
+      - "api/v1/gw_mapping.yaml"    # Boot will look for gateway mapping files and load information into memory
     prom:
       enabled: true                 # Enable prometheus client
     sw:
