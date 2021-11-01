@@ -1,12 +1,12 @@
 ---
 gin:
-  - name: greeter
-    port: 8080
-    enabled: true
+  - name: greeter                     # Required
+    port: 8080                        # Required
+    enabled: true                     # Required
     sw:
-      enabled: true
-      jsonPath: "docs"
+      enabled: true                   # Optional, default: false
+      jsonPath: "docs"                # Optional, default: ""
     commonService:
-      enabled: true
+      enabled: true                   # Optional, default: false
     tv:
-      enabled:  true
+      enabled: true                   # Optional, default: false

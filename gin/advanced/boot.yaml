@@ -1,163 +1,184 @@
 ---
-app:
-  description: "this is description"  # Optional, default: ""
-  keywords: ["rk", "golang"]          # Optional, default: []
-  homeUrl: "http://example.com"       # Optional, default: ""
-  iconUrl: "http://example.com"       # Optional, default: ""
-  docsUrl: ["http://example.com"]     # Optional, default: []
-  maintainers: ["rk-dev"]             # Optional, default: []
+#app:
+#  description: "this is description"                      # Optional, default: ""
+#  keywords: ["rk", "golang"]                              # Optional, default: []
+#  homeUrl: "http://example.com"                           # Optional, default: ""
+#  iconUrl: "http://example.com"                           # Optional, default: ""
+#  docsUrl: ["http://example.com"]                         # Optional, default: []
+#  maintainers: ["rk-dev"]                                 # Optional, default: []
 #zapLogger:
-#  - name: zap-logger                      # Required
-#    description: "Description of entry"   # Optional
+#  - name: zap-logger                                      # Required
+#    description: "Description of entry"                   # Optional
 #    zap:
-#      level: info                         # Optional, default: info, options: [debug, DEBUG, info, INFO, warn, WARN, dpanic, DPANIC, panic, PANIC, fatal, FATAL]
-#      development: true                   # Optional, default: true
-#      disableCaller: false                # Optional, default: false
-#      disableStacktrace: true             # Optional, default: true
-#      sampling:                           # Optional, default: empty map
-#        initial: 0
-#        thereafter: 0
-#      encoding: console                   # Optional, default: "console", options: [console, json]
+#      level: info                                         # Optional, default: info, options: [debug, DEBUG, info, INFO, warn, WARN, dpanic, DPANIC, panic, PANIC, fatal, FATAL]
+#      development: true                                   # Optional, default: true
+#      disableCaller: false                                # Optional, default: false
+#      disableStacktrace: true                             # Optional, default: true
+#      sampling:
+#        initial: 0                                        # Optional, default: 0
+#        thereafter: 0                                     # Optional, default: 0
+#      encoding: console                                   # Optional, default: "console", options: [console, json]
 #      encoderConfig:
-#        messageKey: "msg"                 # Optional, default: "msg"
-#        levelKey: "level"                 # Optional, default: "level"
-#        timeKey: "ts"                     # Optional, default: "ts"
-#        nameKey: "logger"                 # Optional, default: "logger"
-#        callerKey: "caller"               # Optional, default: "caller"
-#        functionKey: ""                   # Optional, default: ""
-#        stacktraceKey: "msg"              # Optional, default: "msg"
-#        lineEnding: "\n"                  # Optional, default: "\n"
-#        levelEncoder: "capitalColor"      # Optional, default: "capitalColor", options: [capital, capitalColor, color, lowercase]
-#        timeEncoder: "iso8601"            # Optional, default: "iso8601", options: [rfc3339nano, RFC3339Nano, rfc3339, RFC3339, iso8601, ISO8601, millis, nanos]
-#        durationEncoder: "string"         # Optional, default: "string", options: [string, nanos, ms]
-#        callerEncoder: ""                 # Optional, default: ""
-#        nameEncoder: ""                   # Optional, default: ""
-#        consoleSeparator: ""              # Optional, default: ""
-#      outputPaths: [ "stdout" ]           # Optional, default: ["stdout"], stdout would be replaced if specified
-#      errorOutputPaths: [ "stderr" ]      # Optional, default: ["stderr"], stderr would be replaced if specified
-#      initialFields:                      # Optional, default: empty map
+#        messageKey: "msg"                                 # Optional, default: "msg"
+#        levelKey: "level"                                 # Optional, default: "level"
+#        timeKey: "ts"                                     # Optional, default: "ts"
+#        nameKey: "logger"                                 # Optional, default: "logger"
+#        callerKey: "caller"                               # Optional, default: "caller"
+#        functionKey: ""                                   # Optional, default: ""
+#        stacktraceKey: "msg"                              # Optional, default: "msg"
+#        lineEnding: "\n"                                  # Optional, default: "\n"
+#        levelEncoder: "capitalColor"                      # Optional, default: "capitalColor", options: [capital, capitalColor, color, lowercase]
+#        timeEncoder: "iso8601"                            # Optional, default: "iso8601", options: [rfc3339nano, RFC3339Nano, rfc3339, RFC3339, iso8601, ISO8601, millis, nanos]
+#        durationEncoder: "string"                         # Optional, default: "string", options: [string, nanos, ms]
+#        callerEncoder: ""                                 # Optional, default: ""
+#        nameEncoder: ""                                   # Optional, default: ""
+#        consoleSeparator: ""                              # Optional, default: ""
+#      outputPaths: [ "stdout" ]                           # Optional, default: ["stdout"], stdout would be replaced if specified
+#      errorOutputPaths: [ "stderr" ]                      # Optional, default: ["stderr"], stderr would be replaced if specified
+#      initialFields:                                      # Optional, default: empty map
 #        key: "value"
-#    lumberjack:                           # Optional
-#      filename: "rkapp.log"               # Optional, default: It uses <processname>-lumberjack.log in os.TempDir() if empty.
-#      maxsize: 1024                       # Optional, default: 1024 (MB)
-#      maxage: 7                           # Optional, default: 7 (days)
-#      maxbackups: 3                       # Optional, default: 3 (days)
-#      localtime: true                     # Optional, default: true
-#      compress: true                      # Optional, default: true
+#    lumberjack:
+#      filename: "rkapp.log"                               # Optional, default: It uses <processname>-lumberjack.log in os.TempDir() if empty.
+#      maxsize: 1024                                       # Optional, default: 1024 (MB)
+#      maxage: 7                                           # Optional, default: 7 (days)
+#      maxbackups: 3                                       # Optional, default: 3 (days)
+#      localtime: true                                     # Optional, default: true
+#      compress: true                                      # Optional, default: true
 #eventLogger:
-#  - name: event-logger
+#  - name: event-logger                                    # Required
+#    encoding: "json"                                      # Optional, default: console, options: [json, console]
+#    outputPaths: []                                       # Optional, default: ["stdout"], stdout would be replaced if specified
+#    lumberjack:
+#      filename: "rkapp.log"                               # Optional, default: It uses <processname>-lumberjack.log in os.TempDir() if empty.
+#      maxsize: 1024                                       # Optional, default: 1024 (MB)
+#      maxage: 7                                           # Optional, default: 7 (days)
+#      maxbackups: 3                                       # Optional, default: 3 (days)
+#      localtime: true                                     # Optional, default: true
+#      compress: true                                      # Optional, default: true
 #config:
-#  - name: my-config
-#    locale: "*::*::*::*"
-#    path: config/default.yaml
+#  - name: my-config                                       # Required
+#    locale: "*::*::*::*"                                  # Required, default: *::*::*::*
+#    path: config/default.yaml                             # Required
 #  - name: my-config
 #    locale: "*::singapore::*::*"
 #    path: config/singapore.yaml
 #  - name: my-config
 #    locale: "*::frankfurt::*::*"
 #    path: config/frankfurt.yaml
+#cred:
+#  - name: "local-cred"                                    # Required
+#    description: "Description of entry"                   # Optional
+#    provider: "localFs"                                   # Required, etcd, consul, localFs, remoteFs are supported options
+#    locale: "*::*::*::*"                                  # Required, default: ""
+#    paths:                                                # Optional
+#      - "example/boot/full/cred.yaml"
 #cert:
-#  - name: "local-cert"                     # Required
-#    description: "Description of entry"    # Optional
-#    provider: "localFs"                    # Required, etcd, consul, localFs, remoteFs are supported options
-#    locale: "*::*::*::*"                   # Required, default: ""
-#    serverCertPath: "cert/server.pem"      # Optional, default: "", path of certificate on local FS
-#    serverKeyPath: "cert/server-key.pem"   # Optional, default: "", path of certificate on local FS
-#  - name: "remote-cert"                    # Required
-#    description: "Description of entry"    # Optional
-#    provider: "remoteFs"                   # Required, etcd, consul, localFs, remoteFs are supported options
-#    endpoint: "localhost:8081"             # Required, both http://x.x.x.x or x.x.x.x are acceptable
-#    locale: "*::*::*::*"                   # Required, default: ""
-#    serverCertPath: "cert/server.pem"      # Optional, default: "", path of certificate on local FS
-#    serverKeyPath: "cert/server-key.pem"   # Optional, default: "", path of certificate on local FS
-#  - name: "consul-cert"                    # Required
-#    provider: "consul"                     # Required, etcd, consul, localFS, remoteFs are supported options
-#    description: "Description of entry"    # Optional
-#    locale: "*::*::*::*"                   # Required, default: ""
-#    endpoint: "localhost:8500"             # Required, http://x.x.x.x or x.x.x.x both acceptable.
-#    datacenter: "dc1"                      # Optional, default: "", consul datacenter
-#    serverCertPath: "server.pem"           # Optional, default: "", key of value in consul
-#    serverKeyPath: "server-key.pem"        # Optional, default: "", key of value in consul
-#  - name: "etcd-cert"                      # Required
-#    description: "Description of entry"    # Optional
-#    provider: "etcd"                       # Required, etcd, consul, localFs, remoteFs are supported options
-#    locale: "*::*::*::*"                   # Required, default: ""
-#    endpoint: "localhost:2379"             # Required, http://x.x.x.x or x.x.x.x both acceptable.
-#    serverCertPath: "server.pem"           # Optional, default: "", key of value in etcd
-#    serverKeyPath: "server-key.pem"        # Optional, default: "", key of value in etcd
+#  - name: "local-cert"                                    # Required
+#    description: "Description of entry"                   # Optional
+#    provider: "localFs"                                   # Required, etcd, consul, localFs, remoteFs are supported options
+#    locale: "*::*::*::*"                                  # Required, default: ""
+#    serverCertPath: "cert/server.pem"                     # Optional, default: "", path of certificate on local FS
+#    serverKeyPath: "cert/server-key.pem"                  # Optional, default: "", path of certificate on local FS
+#  - name: "remote-cert"                                   # Required
+#    description: "Description of entry"                   # Optional
+#    provider: "remoteFs"                                  # Required, etcd, consul, localFs, remoteFs are supported options
+#    endpoint: "localhost:8081"                            # Required, both http://x.x.x.x or x.x.x.x are acceptable
+#    locale: "*::*::*::*"                                  # Required, default: ""
+#    serverCertPath: "cert/server.pem"                     # Optional, default: "", path of certificate on local FS
+#    serverKeyPath: "cert/server-key.pem"                  # Optional, default: "", path of certificate on local FS
+#  - name: "consul-cert"                                   # Required
+#    provider: "consul"                                    # Required, etcd, consul, localFS, remoteFs are supported options
+#    description: "Description of entry"                   # Optional
+#    locale: "*::*::*::*"                                  # Required, default: ""
+#    endpoint: "localhost:8500"                            # Required, http://x.x.x.x or x.x.x.x both acceptable.
+#    datacenter: "dc1"                                     # Optional, default: "", consul datacenter
+#    serverCertPath: "server.pem"                          # Optional, default: "", key of value in consul
+#    serverKeyPath: "server-key.pem"                       # Optional, default: "", key of value in consul
+#  - name: "etcd-cert"                                     # Required
+#    description: "Description of entry"                   # Optional
+#    provider: "etcd"                                      # Required, etcd, consul, localFs, remoteFs are supported options
+#    locale: "*::*::*::*"                                  # Required, default: ""
+#    endpoint: "localhost:2379"                            # Required, http://x.x.x.x or x.x.x.x both acceptable.
+#    serverCertPath: "server.pem"                          # Optional, default: "", key of value in etcd
+#    serverKeyPath: "server-key.pem"                       # Optional, default: "", key of value in etcd
 gin:
   - name: greeter
     port: 8080
     enabled: true
+#    description: "greeter server"                         # Optional, default: ""
 #    cert:
-#      ref: "etcd-cert"
+#      ref: "local-cert"                                   # Optional, default: "", reference of cert entry declared above
+#    sw:
+#      enabled: true                                       # Optional, default: false
+#      path: "sw"                                          # Optional, default: "sw"
+#      jsonPath: ""                                        # Optional
+#      headers: ["sw:rk"]                                  # Optional, default: []
+#    commonService:
+#      enabled: true                                       # Optional, default: false
+#    tv:
+#      enabled:  true                                      # Optional, default: false
+#    prom:
+#      enabled: true                                       # Optional, default: false
+#      path: ""                                            # Optional, default: "metrics"
+#      pusher:
+#        enabled: false                                    # Optional, default: false
+#        jobName: "greeter-pusher"                         # Required
+#        remoteAddress: "localhost:9091"                   # Required
+#        basicAuth: "user:pass"                            # Optional, default: ""
+#        intervalMs: 10000                                 # Optional, default: 1000
+#        cert:                                             # Optional
+#          ref: "local-test"                               # Optional, default: "", reference of cert entry declared above
 #    logger:
 #      zapLogger:
-#        ref: zap-logger
-    sw:
-      enabled: true
-      jsonPath: "docs"
-    commonService:
-      enabled: true
-    tv:
-      enabled:  true
-#    prom:
-#      enabled : true
-#      pusher:
-#        enabled : true
-#        jobName: "demo"
-#        remoteAddress: "localhost:9091"
-#        intervalMs: 2000
-#        basicAuth: "user:pass"
-#        cert:
-#          ref: "ref"
-    interceptors:
+#        ref: zap-logger                                   # Optional, default: logger of STDOUT, reference of logger entry declared above
+#      eventLogger:
+#        ref: event-logger                                 # Optional, default: logger of STDOUT, reference of logger entry declared above
+#    interceptors:
+#      loggingZap:
+#        enabled: true                                     # Optional, default: false
+#        zapLoggerEncoding: "json"                         # Optional, default: "console"
+#        zapLoggerOutputPaths: ["logs/app.log"]            # Optional, default: ["stdout"]
+#        eventLoggerEncoding: "json"                       # Optional, default: "console"
+#        eventLoggerOutputPaths: ["logs/event.log"]        # Optional, default: ["stdout"]
+#      metricsProm:
+#        enabled: true                                     # Optional, default: false
 #      auth:
-#        enabled: true
-#        apiKey: ["token"]
-#        basic: ["user:pass"]
-#        ignorePrefix: ["/rk/v1/healthy"]
+#        enabled: true                                     # Optional, default: false
+#        basic:
+#          - "user:pass"                                   # Optional, default: []
+#        ignorePrefix:
+#          - "/rk/v1"                                      # Optional, default: []
+#        apiKey:
+#          - "keys"                                        # Optional, default: []
+#      meta:
+#        enabled: true                                     # Optional, default: false
+#        prefix: "rk"                                      # Optional, default: "rk"
 #      tracingTelemetry:
-#        enabled: true                                  # Optional, default: false
-#        exporter:                                      # Optional, default will create a stdout exporter
+#        enabled: true                                     # Optional, default: false
+#        exporter:                                         # Optional, default will create a stdout exporter
 #          file:
-#            enabled: true                              # Optional, default: false
-#            outputPath: "logs/trace.log"               # Optional, default: stdout
+#            enabled: true                                 # Optional, default: false
+#            outputPath: "logs/trace.log"                  # Optional, default: stdout
 #          jaeger:
 #            agent:
-#              enabled: true                           # Optional, default: false
-#              host: ""                                # Optional, default: localhost
-#              port: 0                                 # Optional, default: 6831
+#              enabled: false                              # Optional, default: false
+#              host: ""                                    # Optional, default: localhost
+#              port: 0                                     # Optional, default: 6831
 #            collector:
-#              enabled: true                           # Optional, default: false
-#              endpoint: ""                            # Optional, default: http://localhost:14268/api/traces
-#              username: ""                            # Optional, default: ""
-#              password: ""                            # Optional, default: ""
-#      meta:
-#        enabled: true
-#        prefix: "Override"
-      loggingZap:
-        enabled: true
-#        zapLoggerEncoding: "json"
-#        zapLoggerOutputPaths: ["logs/app.log"]
-#        eventLoggerEncoding: "json"
-#        eventLoggerOutputPaths: ["logs/event.log"]
-#      metricsProm:
-#        enabled: true
+#              enabled: true                               # Optional, default: false
+#              endpoint: ""                                # Optional, default: http://localhost:14268/api/traces
+#              username: ""                                # Optional, default: ""
+#              password: ""                                # Optional, default: ""
 #      rateLimit:
-#        enabled: false
-#        algorithm: "leakyBucket"
-#        reqPerSec: 0
+#        enabled: false                                    # Optional, default: false
+#        algorithm: "leakyBucket"                          # Optional, default: "tokenBucket"
+#        reqPerSec: 100                                    # Optional, default: 1000000
 #        paths:
-#          - path: "/rk/v1/healthy"
-#            reqPerSec: 0
+#          - path: "/rk/v1/healthy"                        # Optional, default: ""
+#            reqPerSec: 0                                  # Optional, default: 1000000
 #      timeout:
-#        enabled: false
-#        timeoutMs: 5000
+#        enabled: false                                    # Optional, default: false
+#        timeoutMs: 5000                                   # Optional, default: 5000
 #        paths:
-#          - path: "/rk/v1/healthy"
-#            timeoutMs: 100
-#  - name: bob
-#    port: 8081
-#    commonService:
-#      enabled: true
+#          - path: "/rk/v1/healthy"                        # Optional, default: ""
+#            timeoutMs: 1000                               # Optional, default: 5000

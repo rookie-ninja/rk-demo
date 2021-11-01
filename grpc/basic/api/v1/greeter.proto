@@ -9,9 +9,7 @@ service Greeter {
 }
 
 message GreeterRequest {
-  string name = 1;
+  bytes msg = 1;
 }
 
-message GreeterResponse {
-  string message = 1;
-}
+message GreeterResponse {}

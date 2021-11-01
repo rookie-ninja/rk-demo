@@ -1,0 +1,20 @@
+---
+echo:
+  - name: greeter                     # Required
+    port: 8080                        # Required
+    enabled: true                     # Required
+    tv:
+      enabled: true                   # Optional, default: false
+    prom:
+      enabled: true                   # Optional, default: false
+    sw:
+      enabled: true                   # Optional, default: false
+    commonService:
+      enabled: true                   # Optional, default: false
+    interceptors:
+      loggingZap:
+        enabled: true                 # Optional, default: false
+      metricsProm:
+        enabled: true                 # Optional, default: false
+      meta:
+        enabled: true                 # Optional, default: false

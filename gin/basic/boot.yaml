@@ -1,68 +1,20 @@
 ---
 gin:
-  - name: greeter
-    port: 8080
-    enabled: true
-#    sw:
-#      enabled: true
-#      jsonPath: "docs"
-#    commonService:
-#      enabled: true
-#    tv:
-#      enabled:  true
-#    prom:
-#      enabled : true
-#      pusher:
-#        enabled : true
-#        jobName: "demo"
-#        remoteAddress: "localhost:9091"
-#        intervalMs: 2000
-#        basicAuth: "user:pass"
-#        cert:
-#          ref: "ref"
-#    interceptors:
-#      auth:
-#        enabled: true
-#        apiKey: ["token"]
-#        basic: ["user:pass"]
-#        ignorePrefix: ["/rk/v1/healthy"]
-#      tracingTelemetry:
-#        enabled: true
-#        exporter:
-#          file:
-#            enabled: true
-#            outputPath: "logs/trace.log"
-#          jaeger:
-#            agent:
-#              enabled: true
-#              host: ""
-#              port: 0
-#            collector:
-#              enabled: true
-#              endpoint: ""
-#              username: ""
-#              password: ""
-#      meta:
-#        enabled: true
-#        prefix: "Override"
-#      loggingZap:
-#        enabled: true
-#        zapLoggerEncoding: "json"
-#        zapLoggerOutputPaths: ["logs/app.log"]
-#        eventLoggerEncoding: "json"
-#        eventLoggerOutputPaths: ["logs/event.log"]
-#      metricsProm:
-#        enabled: true
-#      rateLimit:
-#        enabled: false
-#        algorithm: "leakyBucket"
-#        reqPerSec: 0
-#        paths:
-#          - path: "/rk/v1/healthy"
-#            reqPerSec: 0
-#      timeout:
-#        enabled: false
-#        timeoutMs: 5000
-#        paths:
-#          - path: "/rk/v1/healthy"
-#            timeoutMs: 100
+  - name: greeter                     # Required
+    port: 8080                        # Required
+    enabled: true                     # Required
+    tv:
+      enabled: true                   # Optional, default: false
+    prom:
+      enabled: true                   # Optional, default: false
+    sw:
+      enabled: true                   # Optional, default: false
+    commonService:
+      enabled: true                   # Optional, default: false
+    interceptors:
+      loggingZap:
+        enabled: true                 # Optional, default: false
+      metricsProm:
+        enabled: true                 # Optional, default: false
+      meta:
+        enabled: true                 # Optional, default: false

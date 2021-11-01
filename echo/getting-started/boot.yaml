@@ -1,0 +1,12 @@
+---
+echo:
+  - name: greeter                     # Required
+    port: 8080                        # Required
+    enabled: true                     # Required
+    sw:
+      enabled: true                   # Optional, default: false
+      jsonPath: "docs"                # Optional, default: ""
+    commonService:
+      enabled: true                   # Optional, default: false
+    tv:
+      enabled: true                   # Optional, default: false

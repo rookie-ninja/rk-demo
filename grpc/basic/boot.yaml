@@ -1,53 +1,23 @@
 ---
 grpc:
-  - name: greeter                   # Name of grpc entry
-    port: 8080                      # Port of grpc entry
-    enabled: true                   # Enable grpc entry
-    enableReflection: true
-    enableRkGwOption: true
-    noRecvMsgSizeLimit: false
+  - name: greeter                     # Required
+    port: 8080                        # Required
+    enabled: true                     # Required
+    noRecvMsgSizeLimit: true          # Optional, default: false
+    enableReflection: true            # Optional, default: false
+    enableRkGwOption: true            # Optional, default: false
     commonService:
-      enabled: true                 # Enable common service for testing
-    prom:
-      enabled: true                 # Enable prometheus client
+      enabled: true                   # Optional, default: false
     tv:
-      enabled: true
-    gwMappingFilePaths:
-      - "api/v1/gw_mapping.yaml"  # Boot will look for gateway mapping files and load information into memory
+      enabled: true                   # Optional, default: false
     sw:
-      enabled: true
-      jsonPath: "api/gen/v1"
+      enabled: true                   # Optional, default: false
+    prom:
+      enabled: true                   # Optional, default: false
     interceptors:
-#      auth:
-#        enabled: true                # Enable auth interceptor/middleware
-#        basic: ["user:pass"]         # Enable basic auth
-#        ignorePrefix: ["/rk.api.v1.RkCommonService/Healthy"]
-#        apiKey: ["token"]
-#      tracingTelemetry:
-#        enabled: true
-#        exporter:
-#          jaeger:
-#            enabled: true
-#          file:
-#            enabled: true
-#            outputPath: "stdout"
+      loggingZap:
+        enabled: true                 # Optional, default: false
       metricsProm:
-        enabled: true
-#      loggingZap:
-#        enabled: true
-#      meta:
-#        enabled: true
-#        prefix: Override
-#      rateLimit:
-#        enabled: true
-#        algorithm: "leakyBucket"
-#        reqPerSec: 0
-#        paths:
-#          - path: "/rk.api.v1.RkCommonService/Healthy"
-#            reqPerSec: 0
-#      timeout:
-#        enabled: false
-#        timeoutMs: 5000
-#        paths:
-#          - path: "/rk.api.v1.RkCommonService/Healthy"
-#            timeoutMs: 100
+        enabled: true                 # Optional, default: false
+      meta:
+        enabled: true                 # Optional, default: false
