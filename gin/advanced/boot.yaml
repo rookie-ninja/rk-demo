@@ -46,6 +46,7 @@
 #      compress: true                                      # Optional, default: true
 #eventLogger:
 #  - name: event-logger                                    # Required
+#    description: "Description of entry"                   # Optional
 #    encoding: "json"                                      # Optional, default: console, options: [json, console]
 #    outputPaths: []                                       # Optional, default: ["stdout"], stdout would be replaced if specified
 #    lumberjack:
@@ -59,12 +60,15 @@
 #  - name: my-config                                       # Required
 #    locale: "*::*::*::*"                                  # Required, default: *::*::*::*
 #    path: config/default.yaml                             # Required
+#    description: "Description of entry"                   # Optional
 #  - name: my-config
 #    locale: "*::singapore::*::*"
 #    path: config/singapore.yaml
+#    description: "Description of entry"                   # Optional
 #  - name: my-config
 #    locale: "*::frankfurt::*::*"
 #    path: config/frankfurt.yaml
+#    description: "Description of entry"                   # Optional
 #cred:
 #  - name: "local-cred"                                    # Required
 #    description: "Description of entry"                   # Optional
@@ -108,6 +112,12 @@ gin:
 #    description: "greeter server"                         # Optional, default: ""
 #    cert:
 #      ref: "local-cert"                                   # Optional, default: "", reference of cert entry declared above
+#    logger:
+#      zapLogger:
+#        ref: zap-logger                                   # Optional, default: logger of STDOUT, reference of logger entry declared above
+#      eventLogger:
+#        ref: event-logger                                 # Optional, default: logger of STDOUT, reference of logger entry declared above
+
 #    sw:
 #      enabled: true                                       # Optional, default: false
 #      path: "sw"                                          # Optional, default: "sw"
@@ -128,11 +138,6 @@ gin:
 #        intervalMs: 10000                                 # Optional, default: 1000
 #        cert:                                             # Optional
 #          ref: "local-test"                               # Optional, default: "", reference of cert entry declared above
-#    logger:
-#      zapLogger:
-#        ref: zap-logger                                   # Optional, default: logger of STDOUT, reference of logger entry declared above
-#      eventLogger:
-#        ref: event-logger                                 # Optional, default: logger of STDOUT, reference of logger entry declared above
 #    interceptors:
 #      loggingZap:
 #        enabled: true                                     # Optional, default: false
@@ -171,7 +176,7 @@ gin:
 #              password: ""                                # Optional, default: ""
 #      rateLimit:
 #        enabled: false                                    # Optional, default: false
-#        algorithm: "leakyBucket"                          # Optional, default: "tokenBucket"
+#        algorithm: "leakyBucket"                          # Optional, default: "tokenBucket", options: [tokenBucket, leakyBucket]
 #        reqPerSec: 100                                    # Optional, default: 1000000
 #        paths:
 #          - path: "/rk/v1/healthy"                        # Optional, default: ""
