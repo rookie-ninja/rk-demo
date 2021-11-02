@@ -117,7 +117,6 @@ gin:
 #        ref: zap-logger                                   # Optional, default: logger of STDOUT, reference of logger entry declared above
 #      eventLogger:
 #        ref: event-logger                                 # Optional, default: logger of STDOUT, reference of logger entry declared above
-
 #    sw:
 #      enabled: true                                       # Optional, default: false
 #      path: "sw"                                          # Optional, default: "sw"

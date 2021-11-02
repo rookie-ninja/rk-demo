@@ -137,7 +137,7 @@ echo:
 #        intervalMs: 10000                                 # Optional, default: 1000
 #        cert:                                             # Optional
 #          ref: "local-test"                               # Optional, default: "", reference of cert entry declared above
-    interceptors:
+#    interceptors:
 #      loggingZap:
 #        enabled: true                                     # Optional, default: false
 #        zapLoggerEncoding: "json"                         # Optional, default: "console"

@@ -46,6 +46,7 @@
 #      compress: true                                      # Optional, default: true
 #eventLogger:
 #  - name: event-logger                                    # Required
+#    description: "Description of entry"                   # Optional
 #    encoding: "json"                                      # Optional, default: console, options: [json, console]
 #    outputPaths: []                                       # Optional, default: ["stdout"], stdout would be replaced if specified
 #    lumberjack:
@@ -71,25 +72,26 @@
 #    serverKeyPath: "example/boot/full/server-key.pem"     # Optional, default: "", path of certificate on local FS
 #    clientCertPath: "example/boot/full/server.pem"        # Optional, default: "", path of certificate on local FS
 #config:
-#  - name: rk-main                                         # Required
-#    path: "example/boot/full/config.yaml"                 # Required
-#    locale: "*::*::*::*"                                  # Required, default: ""
-#    description: "Description of entry"                   # Optional
-#config:
 #  - name: my-config                                       # Required
 #    locale: "*::*::*::*"                                  # Required
 #    path: config/default.yaml                             # Required
+#    description: "Description of entry"                   # Optional
 grpc:
   - name: greeter                                          # Required
     enabled: true                                          # Required
     port: 8080                                             # Required
 #    description: "greeter server"                         # Optional, default: ""
-#    enableReflection: true                                # Optional, default: false
-#    enableRkGwOption: true                                # Optional, default: false
-#    noRecvMsgSizeLimit: true                              # Optional, default: false
+#    enableReflection: true                                # Optional, default: false, gRPC reflection for grpcurl cli
+#    enableRkGwOption: true                                # Optional, default: false, RK sytle grpc-gateway option
+#    noRecvMsgSizeLimit: true                              # Optional, default: false, disable server side receive size limit
 #    gwMappingFilePaths: []                                # Optional
 #    cert:
 #      ref: "local-cert"                                   # Optional, default: "", reference of cert entry declared above
+#    logger:
+#      zapLogger:
+#        ref: zap-logger                                   # Optional, default: logger of STDOUT, reference of logger entry declared above
+#      eventLogger:
+#        ref: event-logger                                 # Optional, default: logger of STDOUT, reference of logger entry declared above
 #    sw:
 #      enabled: true                                       # Optional, default: false
 #      path: "sw"                                          # Optional, default: "sw"
@@ -110,11 +112,6 @@ grpc:
 #        intervalMs: 10000                                 # Optional, default: 1000
 #        cert:                                             # Optional
 #          ref: "local-test"                               # Optional, default: "", reference of cert entry declared above
-#    logger:
-#      zapLogger:
-#        ref: zap-logger                                   # Optional, default: logger of STDOUT, reference of logger entry declared above
-#      eventLogger:
-#        ref: event-logger                                 # Optional, default: logger of STDOUT, reference of logger entry declared above
 #    interceptors:
 #      loggingZap:
 #        enabled: true                                     # Optional, default: false
@@ -153,7 +150,7 @@ grpc:
 #              password: ""                                # Optional, default: ""
 #      rateLimit:
 #        enabled: false                                    # Optional, default: false
-#        algorithm: "leakyBucket"                          # Optional, default: "tokenBucket"
+#        algorithm: "leakyBucket"                          # Optional, default: "tokenBucket", options: [tokenBucket, leakyBucket]
 #        reqPerSec: 100                                    # Optional, default: 1000000
 #        paths:
 #          - path: "/rk.api.v1.RkCommonService/Healthy"    # Optional, default: ""
