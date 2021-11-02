@@ -1,4 +1,4 @@
-# Advanced tutorial
+# Basic tutorial
 In this example, we will show all YAML config options by functionality block.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
