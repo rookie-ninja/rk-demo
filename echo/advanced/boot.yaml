@@ -46,6 +46,7 @@
 #      compress: true                                      # Optional, default: true
 #eventLogger:
 #  - name: event-logger                                    # Required
+#    description: "Description of entry"                   # Optional
 #    encoding: "json"                                      # Optional, default: console, options: [json, console]
 #    outputPaths: []                                       # Optional, default: ["stdout"], stdout would be replaced if specified
 #    lumberjack:
@@ -57,14 +58,17 @@
 #      compress: true                                      # Optional, default: true
 #config:
 #  - name: my-config                                       # Required
-#    locale: "*::*::*::*"                                  # Required, default: *::*::*::*
+#    locale: "*::*::*::*"                                  # Required, default: ""
 #    path: config/default.yaml                             # Required
+#    description: "Description of entry"                   # Optional
 #  - name: my-config
 #    locale: "*::singapore::*::*"
 #    path: config/singapore.yaml
+#    description: "Description of entry"                   # Optional
 #  - name: my-config
 #    locale: "*::frankfurt::*::*"
 #    path: config/frankfurt.yaml
+#    description: "Description of entry"                   # Optional
 #cred:
 #  - name: "local-cred"                                    # Required
 #    description: "Description of entry"                   # Optional
@@ -102,16 +106,21 @@
 #    serverCertPath: "server.pem"                          # Optional, default: "", key of value in etcd
 #    serverKeyPath: "server-key.pem"                       # Optional, default: "", key of value in etcd
 echo:
-  - name: greeter
-    port: 8080
-    enabled: true
+  - name: greeter                                          # Required
+    port: 8080                                             # Required
+    enabled: true                                          # Required
 #    description: "greeter server"                         # Optional, default: ""
 #    cert:
 #      ref: "local-cert"                                   # Optional, default: "", reference of cert entry declared above
+#    logger:
+#      zapLogger:
+#        ref: zap-logger                                   # Optional, default: logger of STDOUT, reference of logger entry declared above
+#      eventLogger:
+#        ref: event-logger                                 # Optional, default: logger of STDOUT, reference of logger entry declared above
 #    sw:
 #      enabled: true                                       # Optional, default: false
 #      path: "sw"                                          # Optional, default: "sw"
-#      jsonPath: ""                                        # Optional
+#      jsonPath: ""                                        # Optional, default: ""
 #      headers: ["sw:rk"]                                  # Optional, default: []
 #    commonService:
 #      enabled: true                                       # Optional, default: false
@@ -120,7 +129,7 @@ echo:
 #    prom:
 #      enabled: true                                       # Optional, default: false
 #      path: ""                                            # Optional, default: "metrics"
-#      pusher:
+#      pusher:                                             # pushgateway configuration
 #        enabled: false                                    # Optional, default: false
 #        jobName: "greeter-pusher"                         # Required
 #        remoteAddress: "localhost:9091"                   # Required
@@ -128,12 +137,7 @@ echo:
 #        intervalMs: 10000                                 # Optional, default: 1000
 #        cert:                                             # Optional
 #          ref: "local-test"                               # Optional, default: "", reference of cert entry declared above
-#    logger:
-#      zapLogger:
-#        ref: zap-logger                                   # Optional, default: logger of STDOUT, reference of logger entry declared above
-#      eventLogger:
-#        ref: event-logger                                 # Optional, default: logger of STDOUT, reference of logger entry declared above
-#    interceptors:
+    interceptors:
 #      loggingZap:
 #        enabled: true                                     # Optional, default: false
 #        zapLoggerEncoding: "json"                         # Optional, default: "console"
@@ -171,7 +175,7 @@ echo:
 #              password: ""                                # Optional, default: ""
 #      rateLimit:
 #        enabled: false                                    # Optional, default: false
-#        algorithm: "leakyBucket"                          # Optional, default: "tokenBucket"
+#        algorithm: "leakyBucket"                          # Optional, default: "tokenBucket", options: [tokenBucket, leakyBucket]
 #        reqPerSec: 100                                    # Optional, default: 1000000
 #        paths:
 #          - path: "/rk/v1/healthy"                        # Optional, default: ""
