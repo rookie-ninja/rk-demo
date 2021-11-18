@@ -25,6 +25,7 @@ In this example, we will show all YAML config options by functionality block.
     - [Tracing](#tracing)
     - [Rate limit](#rate-limit)
     - [Timeout](#timeout)
+    - [Gzip](#gzip)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -435,4 +436,17 @@ echo:
         paths:
           - path: "/rk/v1/healthy"                         # Optional, default: ""
             timeoutMs: 1000                                # Optional, default: 5000
+```
+
+#### Gzip
+
+```yaml
+echo:
+  - name: greeter                                          # Required
+    port: 8080                                             # Required
+    enabled: true                                          # Required
+    interceptors:
+      gzip:
+        enabled: true                                      # Optional, default: false
+        level: defaultCompression                          # Optional, default: defaultCompression, options: [noCompression, bestSpeed, bestCompression, defaultCompression, huffmanOnly]
 ```

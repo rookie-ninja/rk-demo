@@ -13,6 +13,7 @@ In this example, we will show all YAML config options by functionality block.
 - [Certificates](#certificates)
 - [gRPC](#grpc)
   - [gRPC server](#grpc-server)
+  - [gRPC gateway options](#grpc-gateway-options)
   - [Swagger](#swagger)
   - [Common service](#common-service)
   - [TV](#tv)
@@ -228,6 +229,32 @@ grpc:
 	boot := rkboot.NewBoot()
 
 	boot.GetGrpcEntry("greeter")
+```
+
+### gRPC gateway options
+gRPC gateway will automatically started with same port of gRPC
+
+Please refer to bellow repository for detailed explanations.
+- [protobuf-go/encoding/protojson/encode.go](https://github.com/protocolbuffers/protobuf-go/blob/master/encoding/protojson/encode.go#L43)
+- [protobuf-go/encoding/protojson/decode.go ](https://github.com/protocolbuffers/protobuf-go/blob/master/encoding/protojson/decode.go#L33)
+
+```yaml
+grpc:
+  - name: greeter                                     # Required
+    port: 8080                                        # Required
+    enabled: true                                     # Required
+    enableRkGwOption: true                            # Optional, default: false
+    gwOption:                                         # Optional, default: nil
+      marshal:                                        # Optional, default: nil
+        multiline: false                              # Optional, default: false
+        emitUnpopulated: false                        # Optional, default: false
+        indent: ""                                    # Optional, default: false
+        allowPartial: false                           # Optional, default: false
+        useProtoNames: false                          # Optional, default: false
+        useEnumNumbers: false                         # Optional, default: false
+      unmarshal:                                      # Optional, default: nil
+        allowPartial: false                           # Optional, default: false
+        discardUnknown: false                         # Optional, default: false
 ```
 
 ### Swagger

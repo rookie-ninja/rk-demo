@@ -1,12 +1,19 @@
 definitions:
-  main.GreeterResponse:
+  api.GreeterResponse:
     properties:
       message:
         type: string
     type: object
 info:
-  contact: {}
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
   description: This is a greeter service with rk-boot.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
   title: RK Swagger for Echo
   version: "1.0"
 paths:
@@ -25,6 +32,12 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/main.GreeterResponse'
+            $ref: '#/definitions/api.GreeterResponse'
       summary: Greeter service
+schemes:
+- http
+- https
+securityDefinitions:
+  BasicAuth:
+    type: basic
 swagger: "2.0"

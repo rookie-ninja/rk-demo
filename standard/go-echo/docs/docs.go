@@ -18,7 +18,16 @@ var doc = `{
     "info": {
         "description": "{{.Description}}",
         "title": "{{.Title}}",
-        "contact": {},
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.swagger.io/support",
+            "email": "support@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
         "version": "{{.Version}}"
     },
     "host": "{{.Host}}",
@@ -44,7 +53,7 @@ var doc = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/main.GreeterResponse"
+                            "$ref": "#/definitions/api.GreeterResponse"
                         }
                     }
                 }
@@ -52,13 +61,18 @@ var doc = `{
         }
     },
     "definitions": {
-        "main.GreeterResponse": {
+        "api.GreeterResponse": {
             "type": "object",
             "properties": {
                 "message": {
                     "type": "string"
                 }
             }
+        }
+    },
+    "securityDefinitions": {
+        "BasicAuth": {
+            "type": "basic"
         }
     }
 }`
@@ -77,7 +91,7 @@ var SwaggerInfo = swaggerInfo{
 	Version:     "1.0",
 	Host:        "",
 	BasePath:    "",
-	Schemes:     []string{},
+	Schemes:     []string{"http", "https"},
 	Title:       "RK Swagger for Echo",
 	Description: "This is a greeter service with rk-boot.",
 }

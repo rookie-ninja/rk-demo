@@ -1,9 +1,22 @@
 {
+    "schemes": [
+        "http",
+        "https"
+    ],
     "swagger": "2.0",
     "info": {
         "description": "This is a greeter service with rk-boot.",
         "title": "RK Swagger for Echo",
-        "contact": {},
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.swagger.io/support",
+            "email": "support@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
         "version": "1.0"
     },
     "paths": {
@@ -27,7 +40,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/main.GreeterResponse"
+                            "$ref": "#/definitions/api.GreeterResponse"
                         }
                     }
                 }
@@ -35,13 +48,18 @@
         }
     },
     "definitions": {
-        "main.GreeterResponse": {
+        "api.GreeterResponse": {
             "type": "object",
             "properties": {
                 "message": {
                     "type": "string"
                 }
             }
+        }
+    },
+    "securityDefinitions": {
+        "BasicAuth": {
+            "type": "basic"
         }
     }
 }
