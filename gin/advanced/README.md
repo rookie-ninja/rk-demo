@@ -16,6 +16,7 @@ In this example, we will show all YAML config options by functionality block.
   - [Swagger](#swagger)
   - [Common service](#common-service)
   - [TV](#tv)
+  - [Static file handler](#static-file-handler)
   - [Prometheus client](#prometheus-client)
   - [Middleware/Interceptor](#middlewareinterceptor)
     - [logging](#logging)
@@ -26,6 +27,9 @@ In this example, we will show all YAML config options by functionality block.
     - [Rate limit](#rate-limit)
     - [Timeout](#timeout)
     - [Gzip](#gzip)
+    - [JWT](#jwt)
+    - [Secure](#secure)
+    - [CSRF](#csrf)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -287,6 +291,25 @@ gin:
 boot.GetGinEntry("greeter").TvEntry
 ```
 
+### Static file handler
+```yaml
+gin:
+  - name: greeter                                          # Required
+    port: 8080                                             # Required
+    enabled: true                                          # Required
+    static:
+      enabled: true                                        # Optional, default: false
+      path: "/rk/v1/static"                                # Optional, default: /rk/v1/static
+      sourceType: local                                    # Required, options: pkger, local
+      sourcePath: "."                                      # Required, full path of source directory
+```
+
+- Access from code
+
+```go
+boot.GetGinEntry("greeter").StaticFileEntry
+```
+
 ### Prometheus client
 
 ```yaml
@@ -449,4 +472,69 @@ gin:
       gzip:
         enabled: true                                      # Optional, default: false
         level: defaultCompression                          # Optional, options: [noCompression, bestSpeed， bestCompression, defaultCompression, huffmanOnly]
+```
+
+#### JWT
+
+```yaml
+gin:
+  - name: greeter                                          # Required
+    port: 8080                                             # Required
+    enabled: true                                          # Required
+    interceptors:
+      jwt:
+        enabled: true                                      # Optional, default: false
+        signingKey: "my-secret"                            # Required
+        ignorePrefix:                                      # Optional, default: []
+          - "/rk/v1/tv"
+          - "/sw"
+          - "/rk/v1/assets"
+        signingKeys:                                       # Optional
+          - "key:value"
+        signingAlgo: ""                                    # Optional, default: "HS256"
+        tokenLookup: "header:<name>"                       # Optional, default: "header:Authorization"
+        authScheme: "Bearer"                               # Optional, default: "Bearer"
+```
+
+#### Secure
+
+```yaml
+gin:
+  - name: greeter                                          # Required
+    port: 8080                                             # Required
+    enabled: true                                          # Required
+    interceptors:
+      secure:
+        enabled: true                                     # Optional, default: false
+        xssProtection: ""                                 # Optional, default: "1; mode=block"
+        contentTypeNosniff: ""                            # Optional, default: nosniff
+        xFrameOptions: ""                                 # Optional, default: SAMEORIGIN
+        hstsMaxAge: 0                                     # Optional, default: 0
+        hstsExcludeSubdomains: false                      # Optional, default: false
+        hstsPreloadEnabled: false                         # Optional, default: false
+        contentSecurityPolicy: ""                         # Optional, default: ""
+        cspReportOnly: false                              # Optional, default: false
+        referrerPolicy: ""                                # Optional, default: ""
+        ignorePrefix: []                                  # Optional, default: []
+```
+
+#### CSRF
+
+```yaml
+gin:
+  - name: greeter                                          # Required
+    port: 8080                                             # Required
+    enabled: true                                          # Required
+    interceptors:
+      csrf:
+        enabled: true
+        tokenLength: 32                                   # Optional, default: 32
+        tokenLookup: "header:X-CSRF-Token"                # Optional, default: "header:X-CSRF-Token"
+        cookieName: "_csrf"                               # Optional, default: _csrf
+        cookieDomain: ""                                  # Optional, default: ""
+        cookiePath: ""                                    # Optional, default: ""
+        cookieMaxAge: 86400                               # Optional, default: 86400
+        cookieHttpOnly: false                             # Optional, default: false
+        cookieSameSite: "default"                         # Optional, default: "default", options: lax, strict, none, default
+        ignorePrefix: []                                  # Optional, default: []
 ```

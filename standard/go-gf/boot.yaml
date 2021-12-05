@@ -1,0 +1,13 @@
+---
+# Please refer https://github.com/rookie-ninja/rk-boot for details
+gf:
+  - name: greeter         # Required, Name of echo entry
+    port: 8080            # Required, Port of echo entry
+    enabled: true         # Required, Enable echo entry
+    commonService:
+      enabled: true       # Optional, Enable common service, default: false
+    sw:
+      enabled: true       # Optional, Enable swagger, default: false
+      jsonPath: "docs"    # Optional, The directory where swagger json file located, default: ""
+    tv:
+      enabled:  true      # Optional, Enable Rk TV, default: false

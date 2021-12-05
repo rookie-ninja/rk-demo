@@ -1,0 +1,39 @@
+---
+app:
+  description: "Write your description"
+zapLogger:
+  - name: appLog
+    zap:
+      outputPaths:
+        - "logs/app.log"
+        - "stdout"
+eventLogger:
+  - name: eventLog
+    outputPaths:
+      - "logs/event.log"
+      - "stdout"
+gf:
+  - name: greeter
+    port: 8080
+    enabled: true
+    commonService:
+      enabled: true
+    sw:
+      enabled: true
+      jsonPath: "docs"
+    tv:
+      enabled:  true
+    prom:
+      enabled: true
+    logger:
+      zapLogger:
+        ref: appLog
+      eventLogger:
+        ref: eventLog
+    interceptors:
+      loggingZap:
+        enabled: true
+      metricsProm:
+        enabled: true
+      meta:
+        enabled: true
