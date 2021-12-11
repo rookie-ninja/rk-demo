@@ -5,6 +5,7 @@ In this example, we will show all YAML config options by functionality block.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
+- [Installation](#installation)
 - [Application metadata](#application-metadata)
 - [Zap logger](#zap-logger)
 - [Event logger](#event-logger)
@@ -17,6 +18,7 @@ In this example, we will show all YAML config options by functionality block.
   - [Swagger](#swagger)
   - [Common service](#common-service)
   - [TV](#tv)
+  - [Static file handler](#static-file-handler)
   - [Prometheus client](#prometheus-client)
   - [Middleware/Interceptor](#middlewareinterceptor)
     - [logging](#logging)
@@ -26,8 +28,18 @@ In this example, we will show all YAML config options by functionality block.
     - [Tracing](#tracing)
     - [Rate limit](#rate-limit)
     - [Timeout](#timeout)
+    - [JWT](#jwt)
+    - [Secure](#secure)
+    - [CSRF](#csrf)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Installation
+
+```
+go get github.com/rookie-ninja/rk-boot
+go get github.com/rookie-ninja/rk-grpc
+```
 
 ## Application metadata
 This will be in the response of /rk/v1/info which is accessible if commonService was enabled.

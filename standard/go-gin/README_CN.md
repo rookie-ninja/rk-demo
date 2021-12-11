@@ -7,6 +7,7 @@ Golang 微服务标准包，使用 rk-boot 来启动 gin 服务。
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
+- [安装](#%E5%AE%89%E8%A3%85)
 - [前提条件](#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6)
 - [安装工具](#%E5%AE%89%E8%A3%85%E5%B7%A5%E5%85%B7)
 - [本地编译](#%E6%9C%AC%E5%9C%B0%E7%BC%96%E8%AF%91)
@@ -28,6 +29,13 @@ Golang 微服务标准包，使用 rk-boot 来启动 gin 服务。
 - [build.yaml](#buildyaml)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## 安装
+
+```
+go get github.com/rookie-ninja/rk-boot
+go get github.com/rookie-ninja/rk-gin
+```
 
 ## 前提条件
 推荐下载 [rk](https://github.com/rookie-ninja/rk) 命令行工具来配置 gin 所需要的环境。

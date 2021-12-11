@@ -5,6 +5,7 @@ Rk style golang server package with GoFrame entry enabled.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
+- [Installation](#installation)
 - [Prerequisite](#prerequisite)
 - [Install tools](#install-tools)
 - [Build locally](#build-locally)
@@ -26,6 +27,13 @@ Rk style golang server package with GoFrame entry enabled.
 - [build.yaml](#buildyaml)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Installation
+
+```
+go get github.com/rookie-ninja/rk-boot
+go get github.com/rookie-ninja/rk-gf
+```
 
 ## Prerequisite
 [rk](https://github.com/rookie-ninja/rk) command line tool is recommended in order to build project at enterprise level.

@@ -8,6 +8,7 @@ import (
 	"context"
 	"github.com/rookie-ninja/rk-boot"
 	"github.com/rookie-ninja/rk-demo/internal/api/v1"
+	"github.com/rookie-ninja/rk-gin/boot"
 )
 
 // @title RK Swagger for Gin
@@ -34,7 +35,8 @@ func main() {
 	boot := rkboot.NewBoot()
 
 	// Register handler
-	boot.GetGinEntry("greeter").Router.GET("/v1/greeter", api.Greeter)
+	ginEntry := boot.GetEntry("greeter").(*rkgin.GinEntry)
+	ginEntry.Router.GET("/v1/greeter", api.Greeter)
 
 	// Bootstrap
 	boot.Bootstrap(context.Background())

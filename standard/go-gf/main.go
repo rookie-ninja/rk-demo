@@ -8,6 +8,7 @@ import (
 	"context"
 	"github.com/rookie-ninja/rk-boot"
 	"github.com/rookie-ninja/rk-demo/internal/api/v1"
+	"github.com/rookie-ninja/rk-gf/boot"
 )
 
 // @title RK Swagger for GoFrame
@@ -34,7 +35,8 @@ func main() {
 	boot := rkboot.NewBoot()
 
 	// Register handler
-	boot.GetGfEntry("greeter").Server.BindHandler("/v1/greeter", api.Greeter)
+	gfEntry := boot.GetEntry("greeter").(*rkgf.GfEntry)
+	gfEntry.Server.BindHandler("/v1/greeter", api.Greeter)
 
 	// Bootstrap
 	boot.Bootstrap(context.Background())

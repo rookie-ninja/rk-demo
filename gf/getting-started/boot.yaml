@@ -1,5 +1,5 @@
 ---
-echo:
+gf:
   - name: greeter                     # Required
     port: 8080                        # Required
     enabled: true                     # Required

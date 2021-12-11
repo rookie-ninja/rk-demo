@@ -9,6 +9,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/rookie-ninja/rk-boot"
+	"github.com/rookie-ninja/rk-grpc/boot"
 	"google.golang.org/grpc"
 	"rookie-ninja/demo/api/gen/v1"
 )
@@ -19,7 +20,7 @@ func main() {
 	boot := rkboot.NewBoot()
 
 	// Get grpc entry with name
-	grpcEntry := boot.GetGrpcEntry("greeter")
+	grpcEntry := boot.GetEntry("greeter").(*rkgrpc.GrpcEntry)
 	// Register grpc server into GrpcEntry
 	grpcEntry.AddRegFuncGrpc(registerGreeter)
 	// Register grpc gateway into GrpcEntry
