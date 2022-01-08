@@ -35,11 +35,10 @@
         },
         "parameters": [
           {
-            "name": "msg",
+            "name": "name",
             "in": "query",
             "required": false,
-            "type": "string",
-            "format": "byte"
+            "type": "string"
           }
         ],
         "tags": [
@@ -80,7 +79,12 @@
       }
     },
     "v1GreeterResponse": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "msg": {
+          "type": "string"
+        }
+      }
     }
   }
 }

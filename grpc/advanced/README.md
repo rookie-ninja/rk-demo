@@ -37,8 +37,7 @@ In this example, we will show all YAML config options by functionality block.
 ## Installation
 
 ```
-go get github.com/rookie-ninja/rk-boot
-go get github.com/rookie-ninja/rk-grpc
+go get github.com/rookie-ninja/rk-boot/grpc
 ```
 
 ## Application metadata
@@ -240,7 +239,7 @@ grpc:
 	// Create a new boot instance.
 	boot := rkboot.NewBoot()
 
-	boot.GetGrpcEntry("greeter")
+	rkbootgrpc.GetGrpcEntry("greeter")
 ```
 
 ### gRPC gateway options
@@ -291,7 +290,7 @@ grpc:
 - Access from code
 
 ```go
-boot.GetGrpcEntry("greeter").SwEntry
+rkbootgrpc.GetGrpcEntry("greeter").SwEntry
 ```
 
 ### Common service
@@ -308,7 +307,7 @@ grpc:
 - Access from code
 
 ```go
-boot.GetGrpcEntry("greeter").CommonServiceEntry
+rkbootgrpc.GetGrpcEntry("greeter").CommonServiceEntry
 ```
 
 ### TV
@@ -325,7 +324,7 @@ grpc:
 - Access from code
 
 ```go
-boot.GetGrpcEntry("greeter").TvEntry
+rkbootgrpc.GetGrpcEntry("greeter").TvEntry
 ```
 
 ### Static file handler
@@ -344,7 +343,7 @@ grpc:
 - Access from code
 
 ```go
-boot.GetGrpcEntry("greeter").StaticFileEntry
+rkbootgrpc.GetGrpcEntry("greeter").StaticFileEntry
 ```
 
 ### Prometheus client
@@ -370,7 +369,7 @@ grpc:
 - Access from code
 
 ```go
-boot.GetGrpcEntry("greeter").PromEntry
+rkbootgrpc.GetGrpcEntry("greeter").PromEntry
 ```
 
 ### Middleware/Interceptor

@@ -7,14 +7,15 @@ gin:
       enabled: true                   # Optional, default: false
     prom:
       enabled: true                   # Optional, default: false
-    sw:
+    sw:                               # Optional
       enabled: true                   # Optional, default: false
-    commonService:
+      jsonPath: "docs"                # Optional, default: ""
+    commonService:                    # Optional
       enabled: true                   # Optional, default: false
     interceptors:
       loggingZap:
-        enabled: true                 # Optional, default: false
+        enabled: true
       metricsProm:
-        enabled: true                 # Optional, default: false
+        enabled: true
       meta:
-        enabled: true                 # Optional, default: false
+        enabled: true

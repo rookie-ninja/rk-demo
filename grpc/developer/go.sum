@@ -390,8 +390,8 @@ github.com/rcrowley/go-metrics v0.0.0-20181016184325-3113b8401b8a/go.mod h1:bCqn
 github.com/rogpeppe/fastuuid v0.0.0-20150106093220-6724a57986af/go.mod h1:XWv6SoW27p1b0cqNHllgS5HIMJraePCO15w5zCzIWYg=
 github.com/rogpeppe/fastuuid v1.2.0/go.mod h1:jVj6XXZzXRy/MSR5jhDC/2q6DgLz+nrA6LYCDYWNEvQ=
 github.com/rogpeppe/go-internal v1.3.0/go.mod h1:M8bDsm7K2OlrFYOpmOWEs/qY81heoFRclV5y23lUDJ4=
-github.com/rookie-ninja/rk-boot v1.4.0 h1:AeTQ+QgjCo8lC/59lu4EbJg3hfrrmKNJUomYivnv5CM=
-github.com/rookie-ninja/rk-boot v1.4.0/go.mod h1:mn0DP+T8RTB8oqDSin+zbmWNpNng7NwB4705knUWlN0=
+github.com/rookie-ninja/rk-boot v1.4.1 h1:zu701FARxoMCOg4Lt5W/F6sf2MMfE13ugVQF0PGidXo=
+github.com/rookie-ninja/rk-boot v1.4.1/go.mod h1:mn0DP+T8RTB8oqDSin+zbmWNpNng7NwB4705knUWlN0=
 github.com/rookie-ninja/rk-common v1.2.3 h1:bID5I11Om4az+Bkk7/RxuaHei0MS6ya1jHGnrvrqZBg=
 github.com/rookie-ninja/rk-common v1.2.3/go.mod h1:M2DqLnf5rUK6ewOcSNYZY4LLSJX5dg9I8Wh9JoAs4xo=
 github.com/rookie-ninja/rk-entry v1.0.4 h1:HH2XSlYrJppIpPKp0tell/jxl3Z4p3tPJ6UJMUfO8A0=

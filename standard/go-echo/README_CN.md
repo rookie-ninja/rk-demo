@@ -33,8 +33,7 @@ Golang 微服务标准包，使用 rk-boot 来启动 echo 服务。
 ## 安装
 
 ```
-go get github.com/rookie-ninja/rk-boot
-go get github.com/rookie-ninja/rk-grpc
+go get github.com/rookie-ninja/rk-boot/grpc
 ```
 
 ## 前提条件

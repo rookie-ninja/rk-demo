@@ -6,9 +6,10 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"github.com/rookie-ninja/rk-boot"
+	"github.com/rookie-ninja/rk-boot/grpc"
 	"github.com/rookie-ninja/rk-demo/api/gen/v1"
-	"github.com/rookie-ninja/rk-grpc/boot"
 	"google.golang.org/grpc"
 )
 
@@ -18,8 +19,9 @@ func main() {
 	boot := rkboot.NewBoot()
 
 	// Get grpc entry with name
-	grpcEntry := boot.GetEntry("greeter").(*rkgrpc.GrpcEntry)
+	grpcEntry := rkbootgrpc.GetGrpcEntry("greeter")
 	grpcEntry.AddRegFuncGrpc(registerGreeter)
+	grpcEntry.AddRegFuncGw(greeter.RegisterGreeterHandlerFromEndpoint)
 
 	// Bootstrap
 	boot.Bootstrap(context.Background())
@@ -35,5 +37,7 @@ func registerGreeter(server *grpc.Server) {
 type GreeterServer struct{}
 
 func (server *GreeterServer) Greeter(ctx context.Context, request *greeter.GreeterRequest) (*greeter.GreeterResponse, error) {
-	return &greeter.GreeterResponse{}, nil
+	return &greeter.GreeterResponse{
+		Msg: fmt.Sprintf("Hello %s!", request.Name),
+	}, nil
 }

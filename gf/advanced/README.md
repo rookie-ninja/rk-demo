@@ -35,8 +35,7 @@ In this example, we will show all YAML config options by functionality block.
 ## Installation
 
 ```
-go get github.com/rookie-ninja/rk-boot
-go get github.com/rookie-ninja/rk-gf
+go get github.com/rookie-ninja/rk-boot/gf
 ```
 
 ## Application metadata
@@ -235,7 +234,7 @@ gf:
 	boot := rkboot.NewBoot()
 
 	// Register handler
-	boot.GetGfEntry("greeter").Server.BindHandler("/v1/greeter", Greeter)
+	rkbootgf.GetGfEntry("greeter").Server.BindHandler("/v1/greeter", Greeter)
 ```
 
 ### Swagger
@@ -260,7 +259,7 @@ gf:
 - Access from code
 
 ```go
-boot.GetGfEntry("greeter").SwEntry
+rkbootgf.GetGfEntry("greeter").SwEntry
 ```
 
 ### Common service
@@ -277,7 +276,7 @@ gf:
 - Access from code
 
 ```go
-boot.GetGfEntry("greeter").CommonServiceEntry
+rkbootgf.GetGfEntry("greeter").CommonServiceEntry
 ```
 
 ### TV
@@ -294,7 +293,7 @@ gf:
 - Access from code
 
 ```go
-boot.GetGfEntry("greeter").TvEntry
+rkbootgf.GetGfEntry("greeter").TvEntry
 ```
 
 ### Static file handler
@@ -313,7 +312,7 @@ gf:
 - Access from code
 
 ```go
-boot.GetGfEntry("greeter").StaticFileEntry
+rkbootgf.GetGfEntry("greeter").StaticFileEntry
 ```
 
 ### Prometheus client
@@ -339,7 +338,7 @@ gf:
 - Access from code
 
 ```go
-boot.GetGfEntry("greeter").PromEntry
+rkbootgf.GetGfEntry("greeter").PromEntry
 ```
 
 ### Middleware/Interceptor

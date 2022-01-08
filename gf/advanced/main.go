@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"github.com/gogf/gf/v2/net/ghttp"
 	"github.com/rookie-ninja/rk-boot"
-	"github.com/rookie-ninja/rk-gf/boot"
+	"github.com/rookie-ninja/rk-boot/gf"
 	"net/http"
 )
 
@@ -23,7 +23,7 @@ func main() {
 	boot := rkboot.NewBoot()
 
 	// Register handler
-	gfEntry := boot.GetEntry("greeter").(*rkgf.GfEntry)
+	gfEntry := rkbootgf.GetGfEntry("greeter")
 	gfEntry.Server.BindHandler("/v1/greeter", Greeter)
 
 	// Bootstrap

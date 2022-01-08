@@ -33,8 +33,7 @@ Golang 微服务标准包，使用 rk-boot 来启动 gin 服务。
 ## 安装
 
 ```
-go get github.com/rookie-ninja/rk-boot
-go get github.com/rookie-ninja/rk-gin
+go get github.com/rookie-ninja/rk-boot/gin
 ```
 
 ## 前提条件

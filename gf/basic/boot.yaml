@@ -9,6 +9,7 @@ gf:
       enabled: true                   # Optional, default: false
     sw:
       enabled: true                   # Optional, default: false
+      jsonPath: "docs"                # Optional, default: ""
     commonService:
       enabled: true                   # Optional, default: false
     interceptors:

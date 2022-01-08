@@ -31,8 +31,7 @@ Rk style golang server package with grpc entry enabled.
 ## Installation
 
 ```
-go get github.com/rookie-ninja/rk-boot
-go get github.com/rookie-ninja/rk-grpc
+go get github.com/rookie-ninja/rk-boot/grpc
 ```
 
 ## Prerequisite

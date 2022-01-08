@@ -12,6 +12,7 @@ grpc:
       enabled: true                   # Optional, default: false
     sw:
       enabled: true                   # Optional, default: false
+      jsonPath: "api/gen/v1"          # Optional, default: ""
     prom:
       enabled: true                   # Optional, default: false
     interceptors:

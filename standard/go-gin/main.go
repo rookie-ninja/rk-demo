@@ -8,7 +8,7 @@ package main
 import (
 	"context"
 	"github.com/rookie-ninja/rk-boot"
-	"github.com/rookie-ninja/rk-gin/boot"
+	"github.com/rookie-ninja/rk-boot/gin"
 	"rookie-ninja/demo/internal/api/v1"
 )
 
@@ -36,7 +36,7 @@ func main() {
 	boot := rkboot.NewBoot()
 
 	// Register handler
-	ginEntry := boot.GetEntry("greeter").(*rkgin.GinEntry)
+	ginEntry := rkbootgin.GetGinEntry("greeter")
 	ginEntry.Router.GET("/v1/greeter", api.Greeter)
 
 	// Bootstrap

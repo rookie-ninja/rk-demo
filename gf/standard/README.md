@@ -31,8 +31,7 @@ Rk style golang server package with GoFrame entry enabled.
 ## Installation
 
 ```
-go get github.com/rookie-ninja/rk-boot
-go get github.com/rookie-ninja/rk-gf
+go get github.com/rookie-ninja/rk-boot/gf
 ```
 
 ## Prerequisite

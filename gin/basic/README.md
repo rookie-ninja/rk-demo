@@ -37,8 +37,7 @@ In this example, we will show all YAML config options by functionality block.
 ## Installation
 
 ```
-go get github.com/rookie-ninja/rk-boot
-go get github.com/rookie-ninja/rk-gin
+go get github.com/rookie-ninja/rk-boot/gin
 ```
 
 ## Application metadata
@@ -237,7 +236,7 @@ gin:
 	boot := rkboot.NewBoot()
 
 	// Register handler
-	boot.GetGinEntry("greeter").Router.GET("/v1/greeter", Greeter)
+	rkbootgin.GetGinEntry("greeter").Router.GET("/v1/greeter", Greeter)
 ```
 
 ### Swagger
@@ -262,7 +261,7 @@ gin:
 - Access from code
 
 ```go
-boot.GetGinEntry("greeter").SwEntry
+rkbootgin.GetGinEntry("greeter").SwEntry
 ```
 
 ### Common service
@@ -279,7 +278,7 @@ gin:
 - Access from code
 
 ```go
-boot.GetGinEntry("greeter").CommonServiceEntry
+rkbootgin.GetGinEntry("greeter").CommonServiceEntry
 ```
 
 ### TV
@@ -296,7 +295,7 @@ gin:
 - Access from code
 
 ```go
-boot.GetGinEntry("greeter").TvEntry
+rkbootgin.GetGinEntry("greeter").TvEntry
 ```
 
 ### Static file handler
@@ -315,7 +314,7 @@ gin:
 - Access from code
 
 ```go
-boot.GetGinEntry("greeter").StaticFileEntry
+rkbootgin.GetGinEntry("greeter").StaticFileEntry
 ```
 
 ### Prometheus client
@@ -341,7 +340,7 @@ gin:
 - Access from code
 
 ```go
-boot.GetGinEntry("greeter").PromEntry
+rkbootgin.GetGinEntry("greeter").PromEntry
 ```
 
 ### Middleware/Interceptor
@@ -376,7 +375,6 @@ gin:
     interceptors:
       metricsProm:
         enabled: true                                      # Optional, default: false
-
 ```
 
 #### Auth

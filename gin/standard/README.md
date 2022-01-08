@@ -31,8 +31,7 @@ Rk style golang server package with gin entry enabled.
 ## Installation
 
 ```
-go get github.com/rookie-ninja/rk-boot
-go get github.com/rookie-ninja/rk-gin
+go get github.com/rookie-ninja/rk-boot/gin
 ```
 
 ## Prerequisite

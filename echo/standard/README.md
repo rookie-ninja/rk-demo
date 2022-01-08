@@ -31,8 +31,7 @@ Rk style golang server package with echo entry enabled.
 ## Installation
 
 ```
-go get github.com/rookie-ninja/rk-boot
-go get github.com/rookie-ninja/rk-echo
+go get github.com/rookie-ninja/rk-boot/echo
 ```
 
 ## Prerequisite

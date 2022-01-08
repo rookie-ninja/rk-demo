@@ -37,8 +37,7 @@ In this example, we will show all YAML config options by functionality block.
 ## Installation
 
 ```
-go get github.com/rookie-ninja/rk-boot
-go get github.com/rookie-ninja/rk-grpc
+go get github.com/rookie-ninja/rk-boot/grpc
 ```
 
 ## Application metadata
@@ -240,7 +239,7 @@ grpc:
 	// Create a new boot instance.
 	boot := rkboot.NewBoot()
 
-	boot.GetGrpcEntry("greeter")
+	rkbootgrpc.GetGrpcEntry("greeter")
 ```
 
 ### gRPC gateway options
@@ -291,7 +290,7 @@ grpc:
 - Access from code
 
 ```go
-boot.GetGrpcEntry("greeter").SwEntry
+rkbootgrpc.GetGrpcEntry("greeter").SwEntry
 ```
 
 ### Common service
@@ -308,7 +307,7 @@ grpc:
 - Access from code
 
 ```go
-boot.GetGrpcEntry("greeter").CommonServiceEntry
+rkbootgrpc.GetGrpcEntry("greeter").CommonServiceEntry
 ```
 
 ### TV
@@ -325,7 +324,7 @@ grpc:
 - Access from code
 
 ```go
-boot.GetGrpcEntry("greeter").TvEntry
+rkbootgrpc.GetGrpcEntry("greeter").TvEntry
 ```
 
 ### Static file handler
@@ -344,7 +343,7 @@ grpc:
 - Access from code
 
 ```go
-boot.GetGrpcEntry("greeter").StaticFileEntry
+rkbootgrpc.GetGrpcEntry("greeter").StaticFileEntry
 ```
 
 ### Prometheus client
@@ -370,7 +369,7 @@ grpc:
 - Access from code
 
 ```go
-boot.GetGrpcEntry("greeter").PromEntry
+rkbootgrpc.GetGrpcEntry("greeter").PromEntry
 ```
 
 ### Middleware/Interceptor
@@ -561,4 +560,23 @@ grpc:
         cookieHttpOnly: false                             # Optional, default: false
         cookieSameSite: "default"                         # Optional, default: "default", options: lax, strict, none, default
         ignorePrefix: []                                  # Optional, default: []
+```
+
+#### CORS
+
+```yaml
+grpc:
+  - name: greeter                                          # Required
+    port: 8080                                             # Required
+    enabled: true                                          # Required
+    interceptors:
+      cors:
+        enabled: true                                     # Optional, default: false
+        allowOrigins:
+          - "http://localhost:*"                          # Optional, default: *
+        allowCredentials: false                           # Optional, default: false
+        allowHeaders: []                                  # Optional, default: []
+        allowMethods: []                                  # Optional, default: []
+        exposeHeaders: []                                 # Optional, default: []
+        maxAge: 0                                         # Optional, default: 0
 ```

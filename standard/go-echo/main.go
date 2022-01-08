@@ -7,8 +7,8 @@ package main
 import (
 	"context"
 	"github.com/rookie-ninja/rk-boot"
+	"github.com/rookie-ninja/rk-boot/echo"
 	"github.com/rookie-ninja/rk-demo/internal/api/v1"
-	"github.com/rookie-ninja/rk-echo/boot"
 )
 
 // @title RK Swagger for Echo
@@ -35,7 +35,7 @@ func main() {
 	boot := rkboot.NewBoot()
 
 	// Register handler
-	echoEntry := boot.GetEntry("greeter").(*rkecho.EchoEntry)
+	echoEntry := rkbootecho.GetEchoEntry("greeter")
 	echoEntry.Echo.GET("/v1/greeter", api.Greeter)
 
 	// Bootstrap
