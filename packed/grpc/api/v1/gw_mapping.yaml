@@ -1,0 +1,8 @@
+type: google.api.Service
+config_version: 3
+
+# Please refer google.api.Http in third-party/googleapis/google/api/http.proto file for details.
+http:
+  rules:
+    - selector: api.v1.Greeter.Hello
+      get: /v1/hello
