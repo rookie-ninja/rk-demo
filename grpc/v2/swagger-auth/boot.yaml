@@ -1,0 +1,14 @@
+---
+grpc:
+  - name: greeter                                          # Required
+    enabled: true                                          # Required
+    port: 8080                                             # Required
+    enableReflection: true                                 # Optional, default: false
+    enableRkGwOption: true                                 # Optional, default: false
+    sw:
+      enabled: true                                        # Optional, default: false
+    middleware:
+      auth:
+        enabled: true
+        apiKey:
+          - "my-token"

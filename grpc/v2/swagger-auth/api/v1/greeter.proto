@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package api.v1;
+
+import "protoc-gen-openapiv2/options/annotations.proto";
+
+option go_package = "api/v1/greeter";
+
+// Enable auth in swagger UI
+option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
+  security_definitions: {
+    // Enable BasicAuth
+    security: {
+      key: "BasicAuth",
+      value: {
+        type: TYPE_BASIC,
+      },
+    }
+    // Enable X-API-Key
+    security: {
+      key: "ApiKeyAuth",
+      value: {
+        type: TYPE_API_KEY,
+        name: "X-API-Key",
+        in: IN_HEADER
+      }
+    }
+    // Enable JWT
+    security: {
+      key: "JWT",
+      value: {
+        type: TYPE_API_KEY,
+        name: "Authorization",
+        in: IN_HEADER
+      },
+    }
+  }
+};
+
+service Greeter {
+  rpc Hello (HelloRequest) returns (HelloResponse) {
+    // Reference to auth
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      security: {
+        // For BasicAuth
+        security_requirement: {
+          key: "BasicAuth";
+          value: {}
+        }
+        // For ApiKeyAuth
+        security_requirement: {
+          key: "ApiKeyAuth";
+          value: {}
+        }
+        // For JWT
+        security_requirement: {
+          key: "JWT";
+          value: {}
+        }
+      }
+    };
+  }
+}
+
+message HelloRequest {}
+
+message HelloResponse {
+  string message = 1;
+}
