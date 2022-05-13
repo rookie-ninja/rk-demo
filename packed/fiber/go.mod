@@ -5,7 +5,7 @@ go 1.17
 require (
 	github.com/gofiber/fiber/v2 v2.29.0
 	github.com/rookie-ninja/rk-boot/v2 v2.1.2
-	github.com/rookie-ninja/rk-fiber v1.1.1
+	github.com/rookie-ninja/rk-fiber v1.1.2
 )
 
 require (

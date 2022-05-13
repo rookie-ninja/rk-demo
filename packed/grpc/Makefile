@@ -21,5 +21,5 @@ buf:
 .PHONY: zip
 zip:
 	@echo "[zip] Compress to zip file..."
-	@zip rk-demo.zip *
+	@zip -r rk-demo.zip *
 	@echo "------------------------------------[Done]"
