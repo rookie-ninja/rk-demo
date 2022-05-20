@@ -1,0 +1,17 @@
+grpc:
+  - name: grpc-api
+    enabled: true
+    port: 8080
+    enableReflection: true
+    sw:
+      enabled: true
+      # define swagger config file path if we hope to use different one
+      # jsonPath: ""
+gin:
+  - name: rest-api
+    port: 8081
+    enabled: true
+    sw:
+      enabled: true
+      # define swagger config file path if we hope to use different one
+      # jsonPath: ""
