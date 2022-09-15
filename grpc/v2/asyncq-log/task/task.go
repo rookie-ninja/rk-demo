@@ -5,8 +5,10 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/hibiken/asynq"
-	"github.com/rookie-ninja/rk-entry/v2/entry"
+	"github.com/rookie-ninja/rk-demo/mid"
+	rkentry "github.com/rookie-ninja/rk-entry/v2/entry"
 	"go.uber.org/zap"
+	"net/http"
 )
 
 // ************ Task ************
@@ -16,11 +18,13 @@ const (
 )
 
 type DemoPayload struct {
-	TraceId string
+	Header http.Header `json:"Header"`
 }
 
-func NewDemoTask(traceId string) (*asynq.Task, error) {
-	payload, err := json.Marshal(DemoPayload{TraceId: traceId})
+func NewDemoTask(header http.Header) (*asynq.Task, error) {
+	payload, err := json.Marshal(DemoPayload{
+		Header: header,
+	})
 	if err != nil {
 		return nil, err
 	}
@@ -33,7 +37,7 @@ func HandleDemoTask(ctx context.Context, t *asynq.Task) error {
 		return fmt.Errorf("json.Unmarshal failed: %v: %w", err, asynq.SkipRetry)
 	}
 
-	rkentry.GlobalAppCtx.GetLoggerEntryDefault().Info("handle demo task", zap.String("traceId", p.TraceId))
+	rkentry.GlobalAppCtx.GetLoggerEntryDefault().Info("handle demo task", zap.String("traceId", mid.GetTraceId(ctx)))
 
 	return nil
 }

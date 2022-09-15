@@ -9,8 +9,10 @@ import (
 	mytask "github.com/rookie-ninja/rk-demo/task"
 	"github.com/rookie-ninja/rk-grpc/v2/boot"
 	rkgrpcctx "github.com/rookie-ninja/rk-grpc/v2/middleware/context"
+	"go.opentelemetry.io/otel/propagation"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
+	"net/http"
 )
 
 //go:embed grpc-server.yaml
@@ -41,7 +43,12 @@ func (server *MyServer) Enqueue(ctx context.Context, req *greeter.TaskReq) (*gre
 	client := asynq.NewClient(asynq.RedisClientOpt{Addr: "127.0.0.1:6379"})
 	defer client.Close()
 
-	task, err := mytask.NewDemoTask(rkgrpcctx.GetTraceId(ctx))
+	// get metadata
+	//newCtx := trace.ContextWithRemoteSpanContext(ctx, rkgrpcctx.GetTraceSpan(ctx).SpanContext())
+	header := http.Header{}
+	rkgrpcctx.GetTracerPropagator(ctx).Inject(ctx, propagation.HeaderCarrier(header))
+
+	task, err := mytask.NewDemoTask(header)
 	if err != nil {
 		return nil, err
 	}

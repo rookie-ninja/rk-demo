@@ -5,5 +5,9 @@ grpc:
     middleware:
       trace:
         enabled: true
+        exporter:
+          file:
+            enabled: true
+            outputPath: "logs/server.log"
       logging:
         enabled: true
