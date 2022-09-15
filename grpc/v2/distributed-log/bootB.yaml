@@ -1,0 +1,9 @@
+grpc:
+  - name: serverB
+    enabled: true
+    port: 2008
+    middleware:
+      trace:
+        enabled: true
+      logging:
+        enabled: true

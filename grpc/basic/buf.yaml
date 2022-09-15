@@ -1,5 +1,0 @@
-version: v1beta1
-name: github.com/rk-dev/rk-boot
-build:
-  roots:
-    - api

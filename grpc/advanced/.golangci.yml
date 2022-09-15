@@ -1,6 +1,0 @@
-linters:
-  disable-all: true
-  enable:
-    - structcheck
-#    - errcheck
-#    - staticcheck

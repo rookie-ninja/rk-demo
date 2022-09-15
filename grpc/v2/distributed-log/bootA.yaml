@@ -1,0 +1,9 @@
+grpc:
+  - name: serverA
+    enabled: true
+    port: 1949
+    middleware:
+      trace:
+        enabled: true
+      logging:
+        enabled: true
