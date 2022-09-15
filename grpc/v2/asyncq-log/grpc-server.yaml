@@ -1,0 +1,9 @@
+grpc:
+  - name: greeter
+    enabled: true
+    port: 8080
+    middleware:
+      trace:
+        enabled: true
+      logging:
+        enabled: true
