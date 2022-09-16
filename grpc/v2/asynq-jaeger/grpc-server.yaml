@@ -6,8 +6,8 @@ grpc:
       trace:
         enabled: true
         exporter:
-          file:
-            enabled: true
-            outputPath: "logs/server.log"
+          jaeger:
+            agent:
+              enabled: true
       logging:
         enabled: true

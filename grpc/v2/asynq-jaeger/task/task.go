@@ -5,25 +5,26 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/hibiken/asynq"
-	"github.com/rookie-ninja/rk-demo/mid"
-	rkentry "github.com/rookie-ninja/rk-entry/v2/entry"
+	"github.com/rookie-ninja/rk-entry/v2/entry"
+	rkasynq "github.com/rookie-ninja/rk-repo/asynq"
 	"go.uber.org/zap"
 	"net/http"
+	"time"
 )
 
 // ************ Task ************
 
 const (
-	TypeDemo = "demo:test"
+	TypeDemo = "demo-task"
 )
 
 type DemoPayload struct {
-	Header http.Header `json:"Header"`
+	TraceHeader http.Header `json:"traceHeader"`
 }
 
 func NewDemoTask(header http.Header) (*asynq.Task, error) {
 	payload, err := json.Marshal(DemoPayload{
-		Header: header,
+		TraceHeader: header,
 	})
 	if err != nil {
 		return nil, err
@@ -32,12 +33,15 @@ func NewDemoTask(header http.Header) (*asynq.Task, error) {
 }
 
 func HandleDemoTask(ctx context.Context, t *asynq.Task) error {
+	// sleep a while for testing
+	time.Sleep(50 * time.Millisecond)
+
 	var p DemoPayload
 	if err := json.Unmarshal(t.Payload(), &p); err != nil {
 		return fmt.Errorf("json.Unmarshal failed: %v: %w", err, asynq.SkipRetry)
 	}
 
-	rkentry.GlobalAppCtx.GetLoggerEntryDefault().Info("handle demo task", zap.String("traceId", mid.GetTraceId(ctx)))
+	rkentry.GlobalAppCtx.GetLoggerEntryDefault().Info("handle demo task", zap.String("traceId", rkasynq.GetTraceId(ctx)))
 
 	return nil
 }

@@ -8,6 +8,8 @@ require (
 	github.com/rookie-ninja/rk-boot/v2 v2.2.5
 	github.com/rookie-ninja/rk-entry/v2 v2.2.5
 	github.com/rookie-ninja/rk-grpc/v2 v2.2.7
+	github.com/rookie-ninja/rk-repo/asynq v0.0.1
+	go.opentelemetry.io/otel v1.8.0
 	go.uber.org/zap v1.21.0
 	google.golang.org/grpc v1.46.2
 	google.golang.org/protobuf v1.28.0
@@ -46,7 +48,6 @@ require (
 	github.com/spf13/viper v1.12.0 // indirect
 	github.com/subosito/gotenv v1.3.0 // indirect
 	go.opentelemetry.io/contrib v1.8.0 // indirect
-	go.opentelemetry.io/otel v1.8.0 // indirect
 	go.opentelemetry.io/otel/exporters/jaeger v1.8.0 // indirect
 	go.opentelemetry.io/otel/exporters/stdout/stdouttrace v1.8.0 // indirect
 	go.opentelemetry.io/otel/sdk v1.8.0 // indirect

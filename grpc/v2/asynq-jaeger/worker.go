@@ -3,15 +3,15 @@ package main
 import (
 	_ "embed"
 	"github.com/hibiken/asynq"
-	"github.com/rookie-ninja/rk-demo/mid"
 	"github.com/rookie-ninja/rk-demo/task"
 	"github.com/rookie-ninja/rk-entry/v2/entry"
+	"github.com/rookie-ninja/rk-repo/asynq"
 )
 
 var logger = rkentry.GlobalAppCtx.GetLoggerEntryDefault().Logger
 
-//go:embed jaeger.yaml
-var jaegerYaml []byte
+//go:embed trace.yaml
+var traceConfRaw []byte
 
 func main() {
 	srv := asynq.NewServer(
@@ -25,11 +25,12 @@ func main() {
 	mux := asynq.NewServeMux()
 	mux.HandleFunc(task.TypeDemo, task.HandleDemoTask)
 
-	traceMid, err := mid.NewTraceMiddleware(jaegerYaml)
+	// add jaeger middleware
+	jaegerMid, err := rkasynq.NewJaegerMid(traceConfRaw)
 	if err != nil {
 		rkentry.ShutdownWithError(err)
 	}
-	mux.Use(traceMid)
+	mux.Use(jaegerMid)
 
 	if err := srv.Run(mux); err != nil {
 		rkentry.ShutdownWithError(err)

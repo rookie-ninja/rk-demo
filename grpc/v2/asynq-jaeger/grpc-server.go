@@ -8,9 +8,8 @@ import (
 	"github.com/rookie-ninja/rk-demo/api/gen/v1"
 	mytask "github.com/rookie-ninja/rk-demo/task"
 	"github.com/rookie-ninja/rk-grpc/v2/boot"
-	rkgrpcctx "github.com/rookie-ninja/rk-grpc/v2/middleware/context"
+	"github.com/rookie-ninja/rk-grpc/v2/middleware/context"
 	"go.opentelemetry.io/otel/propagation"
-	"go.uber.org/zap"
 	"google.golang.org/grpc"
 	"net/http"
 )
@@ -43,22 +42,19 @@ func (server *MyServer) Enqueue(ctx context.Context, req *greeter.TaskReq) (*gre
 	client := asynq.NewClient(asynq.RedisClientOpt{Addr: "127.0.0.1:6379"})
 	defer client.Close()
 
-	// get metadata
-	//newCtx := trace.ContextWithRemoteSpanContext(ctx, rkgrpcctx.GetTraceSpan(ctx).SpanContext())
+	// get trace metadata
 	header := http.Header{}
 	rkgrpcctx.GetTracerPropagator(ctx).Inject(ctx, propagation.HeaderCarrier(header))
 
+	err := server.enqueueTask(client, header)
+	err = server.enqueueTask(client, header)
+	err = server.enqueueTask(client, header)
+
+	return &greeter.TaskResp{}, err
+}
+
+func (server *MyServer) enqueueTask(client *asynq.Client, header http.Header) error {
 	task, err := mytask.NewDemoTask(header)
-	if err != nil {
-		return nil, err
-	}
-	info, err := client.Enqueue(task)
-	if err != nil {
-		return nil, err
-	}
-
-	logger := rkgrpcctx.GetLogger(ctx)
-	logger.Info("enqueued task", zap.String("id", info.ID), zap.String("queue", info.Queue))
-
-	return &greeter.TaskResp{}, nil
+	_, err = client.Enqueue(task)
+	return err
 }
