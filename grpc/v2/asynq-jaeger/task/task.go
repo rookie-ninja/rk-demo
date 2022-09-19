@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"github.com/hibiken/asynq"
 	"github.com/rookie-ninja/rk-entry/v2/entry"
-	rkasynq "github.com/rookie-ninja/rk-repo/asynq"
+	"github.com/rookie-ninja/rk-repo/asynq"
 	"go.uber.org/zap"
 	"net/http"
 	"time"
@@ -43,5 +43,31 @@ func HandleDemoTask(ctx context.Context, t *asynq.Task) error {
 
 	rkentry.GlobalAppCtx.GetLoggerEntryDefault().Info("handle demo task", zap.String("traceId", rkasynq.GetTraceId(ctx)))
 
+	CallFuncA(ctx)
+	CallFuncB(ctx)
+
 	return nil
+}
+
+func CallFuncA(ctx context.Context) {
+	newCtx, span := rkasynq.NewSpan(ctx, "funcA")
+	defer rkasynq.EndSpan(span, true)
+
+	time.Sleep(10 * time.Millisecond)
+
+	CallFuncAA(newCtx)
+}
+
+func CallFuncAA(ctx context.Context) {
+	_, span := rkasynq.NewSpan(ctx, "funcAA")
+	defer rkasynq.EndSpan(span, true)
+
+	time.Sleep(10 * time.Millisecond)
+}
+
+func CallFuncB(ctx context.Context) {
+	_, span := rkasynq.NewSpan(ctx, "funcB")
+	defer rkasynq.EndSpan(span, true)
+
+	time.Sleep(10 * time.Millisecond)
 }

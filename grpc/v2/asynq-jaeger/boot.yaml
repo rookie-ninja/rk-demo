@@ -1,3 +1,16 @@
+grpc:
+  - name: greeter
+    enabled: true
+    port: 8080
+    middleware:
+      trace:
+        enabled: true
+        exporter:
+          jaeger:
+            agent:
+              enabled: true
+      logging:
+        enabled: true
 asynq:
   trace:
     enabled: true

@@ -401,8 +401,8 @@ github.com/rookie-ninja/rk-logger v1.2.11 h1:QqfVnTFKVpjFnETB4lAVEzLWm5zSy/ghJpP
 github.com/rookie-ninja/rk-logger v1.2.11/go.mod h1:0ZiGn1KsHKOmCv+FHMH7k40DWYSJcj5yIR3EYcjlnLs=
 github.com/rookie-ninja/rk-query v1.2.14 h1:aYNyMXixpsEYRfEOz9Npt5QG3A6BQlo9vKjYc78x7bc=
 github.com/rookie-ninja/rk-query v1.2.14/go.mod h1:OG4rBizXsBjGp+gbyWNTeQogJLzZGUZWkV9QeHEj1ZU=
-github.com/rookie-ninja/rk-repo/asynq v0.0.1 h1:3C9nwn0sY39X9stLkxikB7//Oy86P+w8vhL19vrBSRM=
-github.com/rookie-ninja/rk-repo/asynq v0.0.1/go.mod h1:1G74C/nlwP2r9RumHsveBIXPfJJqa54UZVg302M3yEA=
+github.com/rookie-ninja/rk-repo/asynq v0.0.2 h1:yA6edEEPlKkrkyYkDNqW7/n6829xzi50iDj4w5yffhg=
+github.com/rookie-ninja/rk-repo/asynq v0.0.2/go.mod h1:1G74C/nlwP2r9RumHsveBIXPfJJqa54UZVg302M3yEA=
 github.com/ryanuber/columnize v0.0.0-20160712163229-9b3edd62028f/go.mod h1:sm1tb6uqfes/u+d4ooFouqFdy9/2g9QGwK3SQygK0Ts=
 github.com/sagikazarmark/crypt v0.6.0/go.mod h1:U8+INwJo3nBv1m6A/8OBXAq7Jnpspk5AxSgDyEQcea8=
 github.com/sean-/seed v0.0.0-20170313163322-e2103e2c3529/go.mod h1:DxrIzT+xaE7yg65j358z/aeFdxmN0P9QXhEzd20vsDc=

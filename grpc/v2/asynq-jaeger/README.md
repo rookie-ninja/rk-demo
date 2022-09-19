@@ -1,9 +1,7 @@
 # Example
 In this example, we will implement jaeger tracing between gRPC server and asynq worker server.
 
-[grpc-server](grpc-server.go) will listen on port 8080 at path of localhost:8080/v1/enqueue.
-
-[worker](worker.go) will start asynq worker server and consume tasks.
+[server](server.go) will listen on port 8080 at path of localhost:8080/v1/enqueue, also asynq worker will start
 
 gRPC request and asynq task will be in the same trace with different span.
 
@@ -14,8 +12,8 @@ go get github.com/rookie-ninja/rk-repo/asynq
 ```
 
 ## Quick start
-### 1.Create grpc-server.yaml and trace.yaml
-- grpc-server.yaml
+### 1.Create boot.yaml
+- boot.yaml
 
 ```yaml
 grpc:
@@ -31,11 +29,6 @@ grpc:
               enabled: true
       logging:
         enabled: true
-```
-
-- trace.yaml
-
-```yaml
 asynq:
   trace:
     enabled: true
@@ -45,8 +38,8 @@ asynq:
           enabled: true
 ```
 
-### 2.Create grpc-server.go and worker.go
-Please refer to [grpc-server.go](grpc-server.go) and [worker.go](worker.go) 
+### 2.Create server.go
+Please refer to [server.go](server.go)
 
 ### 3.Run jaeger-all-in-one locally
 ```shell
@@ -69,8 +62,7 @@ docker run -d --name jaeger \
 ### 4.Start grpc-server and worker
 
 ```shell
-$ go run grpc-server.go
-$ go run worker.go
+$ go run server.go
 ```
 
 ### 4.Validation
