@@ -1,9 +1,13 @@
 grpc:
-  - name: serverB
+  - name: grpcServerA
     enabled: true
     port: 2008
     middleware:
       trace:
         enabled: true
+        exporter:
+          jaeger:
+            agent:
+              enabled: true
       logging:
         enabled: true

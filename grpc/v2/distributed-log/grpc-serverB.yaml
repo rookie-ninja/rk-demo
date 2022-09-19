@@ -1,0 +1,13 @@
+grpc:
+  - name: grpcServerB
+    enabled: true
+    port: 2022
+    middleware:
+      trace:
+        enabled: true
+        exporter:
+          jaeger:
+            agent:
+              enabled: true
+      logging:
+        enabled: true

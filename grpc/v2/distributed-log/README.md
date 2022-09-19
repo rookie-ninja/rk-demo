@@ -1,75 +1,124 @@
 # Example
-In this example, we will start two gRPC servers serverA and serverB and implement distributed logging.
+In this example, we will start one http server and two gRPC servers serverA and serverB and implement distributed logging.
 
+![](img/arch.png)
+
+## Install
 ```shell
 go get github.com/rookie-ninja/rk-boot/v2
 go get github.com/rookie-ninja/rk-grpc/v2
+go get github.com/rookie-ninja/rk-gin/v2
 ```
 
 ## Quick start
-### 3.Create bootA.yaml and bootB.yaml
-- bootA.yaml
+### 1.Create bootA.yaml and bootB.yaml
+- http-server.yaml
 
 ```yaml
-grpc:
-  - name: serverA
+gin:
+  - name: httpServer
     enabled: true
     port: 1949
     middleware:
       trace:
         enabled: true
+        exporter:
+          jaeger:
+            agent:
+              enabled: true
       logging:
         enabled: true
 ```
 
-- bootB.yaml
+- grpc-serverA.yaml
 
 ```yaml
 grpc:
-  - name: serverB
+  - name: grpcServerA
     enabled: true
     port: 2008
     middleware:
       trace:
         enabled: true
+        exporter:
+          jaeger:
+            agent:
+              enabled: true
       logging:
         enabled: true
 ```
 
-### 4.Create serverA.go and serverB.go
-Please refer to [serverA.go](serverA.go) and [serverB.go](serverB.go) 
+- grpc-serverB.yaml
 
-### 5.Start serverA and serverB
+```yaml
+grpc:
+  - name: grpcServerB
+    enabled: true
+    port: 2022
+    middleware:
+      trace:
+        enabled: true
+        exporter:
+          jaeger:
+            agent:
+              enabled: true
+      logging:
+        enabled: true
+```
+
+### 2.Create grpc-serverA.go, grpc-serverB.go and http-server.go
+Please refer to [grpc-serverA.go](grpc-serverA.go), [grpc-serverB.go](grpc-serverB.go) and [http-server.go](http-server.go)
+
+> How to propagate span from http-server to grpc-serverA and grpc-serverB?
+> 
+> First, get span context from http-server which generated automatically by rk-boot. Second, inject span context into metadata and create new context
+> ```go
+> grpcCtx := trace.ContextWithRemoteSpanContext(context.Background(), rkginctx.GetTraceSpan(ctx).SpanContext())
+> md := metadata.Pairs()
+> rkginctx.GetTracerPropagator(ctx).Inject(grpcCtx, &rkgrpcctx.GrpcMetadataCarrier{Md: &md})
+> grpcCtx = metadata.NewOutgoingContext(grpcCtx, md)
+> ```
+
+### 3.Start serverA and serverB
 
 ```shell
-$ go run serverA.go
-$ go run serverB.go
+$ go run http-server.go
+$ go run grpc-serverA.go
+$ go run grpc-serverB.go
 ```
 
 ### 4.Validation
-#### 4.1 Send request to serverA
-Since grpc-gateway is automatically enabled by default, we will use curl to send request.
+#### 4.1 Send request to http-server
 
 ```shell
-curl "localhost:1949/v1/hello?name=rk-dev"
-{"message":"Hello rk-dev!"}
+curl localhost:1949/v1/hello
+{"traceId":"beef5f01aaedd92da9e99d2e64ab63ba"}
 ```
 
-#### 4.2 Validate log from serverA and serverB
-Two servers will have same traceId
-
-- log from ServerA
+#### 4.2 Validate log from grpc-serverA, grpc-serverB and http-server
+- log from http-server
 
 ```shell
 ------------------------------------------------------------------------
-ids={"eventId":"f5204ea9-b727-4c93-9b22-beea6fae147c","traceId":"e04a5378e5216becf8afb947a1428a7e"}
+ids={"eventId":"ef20e4cc-6781-4ef2-a303-9f064dd5fc76","traceId":"beef5f01aaedd92da9e99d2e64ab63ba"}
 ...
 ```
 
-- log from ServerB
+- log from grpc-serverA
 
 ```shell
 ------------------------------------------------------------------------
-ids={"eventId":"0dab9066-0352-4f1a-8221-356bc4e661bc","traceId":"e04a5378e5216becf8afb947a1428a7e"}
+ids={"eventId":"0f6b8bec-98f7-4128-88f3-1e4a6cafaa12","traceId":"beef5f01aaedd92da9e99d2e64ab63ba"}
 ....
 ```
+
+- log from grpc-serverB
+
+```shell
+------------------------------------------------------------------------
+ids={"eventId":"0a8477f3-ef82-43fd-b2c3-e1f29f8c51a3","traceId":"beef5f01aaedd92da9e99d2e64ab63ba"}
+....
+```
+
+#### 4.3 Jaeger
+![](img/trace.png)

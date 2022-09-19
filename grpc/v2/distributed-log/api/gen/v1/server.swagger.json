@@ -1,12 +1,15 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "v1/greeter.proto",
+    "title": "v1/server.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Greeter"
+      "name": "ServerA"
+    },
+    {
+      "name": "ServerB"
     }
   ],
   "consumes": [
@@ -16,14 +19,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/hello": {
+    "/v1/login": {
       "get": {
-        "operationId": "Greeter_Hello",
+        "operationId": "ServerA_Login",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1HelloResponse"
+              "$ref": "#/definitions/v1LoginResp"
             }
           },
           "default": {
@@ -33,16 +36,8 @@
             }
           }
         },
-        "parameters": [
-          {
-            "name": "name",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          }
-        ],
         "tags": [
-          "Greeter"
+          "ServerA"
         ]
       }
     }
@@ -78,13 +73,14 @@
         }
       }
     },
-    "v1HelloResponse": {
-      "type": "object",
-      "properties": {
-        "message": {
-          "type": "string"
-        }
-      }
+    "v1CallAResp": {
+      "type": "object"
+    },
+    "v1CallBResp": {
+      "type": "object"
+    },
+    "v1LoginResp": {
+      "type": "object"
     }
   }
 }

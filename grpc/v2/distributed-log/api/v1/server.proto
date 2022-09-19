@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package api.v1;
+
+option go_package = "api/v1/greeter";
+
+service ServerA {
+  rpc Login (LoginReq) returns (LoginResp) {}
+
+  rpc CallA (CallAReq) returns (CallAResp) {}
+}
+
+message LoginReq {}
+
+message LoginResp {}
+
+message CallAReq {}
+
+message CallAResp {}
+
+service ServerB {
+  rpc CallB (CallBReq) returns (CallBResp) {}
+}
+
+message CallBReq {}
+
+message CallBResp {}
