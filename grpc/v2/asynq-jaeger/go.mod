@@ -5,10 +5,10 @@ go 1.17
 require (
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.10.3
 	github.com/hibiken/asynq v0.23.0
-	github.com/rookie-ninja/rk-boot/v2 v2.2.5
-	github.com/rookie-ninja/rk-entry/v2 v2.2.5
-	github.com/rookie-ninja/rk-grpc/v2 v2.2.7
-	github.com/rookie-ninja/rk-repo/asynq v0.0.2
+	github.com/rookie-ninja/rk-boot/v2 v2.2.6
+	github.com/rookie-ninja/rk-entry/v2 v2.2.6
+	github.com/rookie-ninja/rk-grpc/v2 v2.2.8
+	github.com/rookie-ninja/rk-repo/asynq v0.0.3
 	go.opentelemetry.io/otel v1.8.0
 	go.uber.org/zap v1.21.0
 	google.golang.org/grpc v1.46.2
