@@ -1,0 +1,12 @@
+---
+gin:
+  - name: serverB
+    port: 2008
+    enabled: true
+    middleware:
+      logging:
+        enabled: true
+      meta:
+        enabled: true
+      trace:
+        enabled: true

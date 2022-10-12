@@ -1,0 +1,12 @@
+---
+gin:
+  - name: serverA
+    port: 1949
+    enabled: true
+    middleware:
+      logging:
+        enabled: true
+      meta:
+        enabled: true
+      trace:
+        enabled: true
