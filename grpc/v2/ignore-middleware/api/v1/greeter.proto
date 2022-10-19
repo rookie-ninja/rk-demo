@@ -5,11 +5,15 @@ package api.v1;
 option go_package = "api/v1/greeter";
 
 service Greeter {
-  rpc Hello (HelloRequest) returns (HelloResponse) {}
+  rpc Ignore (IgnoreRequest) returns (IgnoreResponse) {}
+
+  rpc Show (ShowRequest) returns (ShowResponse) {}
 }
 
-message HelloRequest {}
+message IgnoreRequest {}
 
-message HelloResponse {
-  string message = 1;
-}
+message IgnoreResponse {}
+
+message ShowRequest {}
+
+message ShowResponse {}

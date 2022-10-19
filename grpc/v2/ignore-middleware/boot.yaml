@@ -5,6 +5,10 @@ grpc:
     enableReflection: true
     enableRkGwOption: true
     middleware:
-      logging:
+      trace:
         enabled: true
-        ignore: ["/api.v1.Greeter/Hello"]
+        ignore: ["/api.v1.Greeter/Ignore"]
+        exporter:
+          file:
+            enabled: true
+            outputPath: "stdout"

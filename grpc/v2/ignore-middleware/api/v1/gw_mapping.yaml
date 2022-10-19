@@ -4,5 +4,7 @@ config_version: 3
 # Please refer google.api.Http in third-party/googleapis/google/api/http.proto file for details.
 http:
   rules:
-    - selector: api.v1.Greeter.Hello
-      get: /v1/hello
+    - selector: api.v1.Greeter.Ignore
+      get: /v1/ignore
+    - selector: api.v1.Greeter.Show
+      get: /v1/show

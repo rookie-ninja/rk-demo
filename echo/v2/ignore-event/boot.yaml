@@ -1,0 +1,8 @@
+event:
+  - name: my-event
+    outputPaths: [""]
+echo:
+  - name: greeter
+    port: 8080
+    enabled: true
+    eventEntry: my-event

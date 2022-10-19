@@ -35,9 +35,10 @@ func registerGreeter(server *grpc.Server) {
 // GreeterServer GreeterServer struct
 type GreeterServer struct{}
 
-// Hello response with hello message
-func (server *GreeterServer) Hello(_ context.Context, _ *greeter.HelloRequest) (*greeter.HelloResponse, error) {
-	return &greeter.HelloResponse{
-		Message: "Hello gRPC user!",
-	}, nil
+func (server *GreeterServer) Ignore(_ context.Context, _ *greeter.IgnoreRequest) (*greeter.IgnoreResponse, error) {
+	return &greeter.IgnoreResponse{}, nil
+}
+
+func (server *GreeterServer) Show(_ context.Context, _ *greeter.ShowRequest) (*greeter.ShowResponse, error) {
+	return &greeter.ShowResponse{}, nil
 }
